@@ -1,0 +1,8 @@
+.header-add {
+    background: #185abc;
+    padding: 15px;
+}
+
+.header-add>* {
+    color: #fafafa;
+}
