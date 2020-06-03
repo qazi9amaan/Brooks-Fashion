@@ -1,3 +1,13 @@
+<?php
+
+$db = getDbInstance();
+$current_associate = $_SESSION['associate_user_id'] ;
+$numActivities = $db->where('associate_id', $current_associate)->getValue ("associate_notifications", "count(*)");
+$numOrders = $db->where('owner', $current_associate)->getValue ("order_notifcations", "count(*)");
+
+$numNotifications=$numActivities+$numOrders;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +37,7 @@
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
        
         <script src="/admin/assets/js/jquery.min.js" type="text/javascript"></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
     </head>
 
@@ -49,9 +60,12 @@
                         <a class="navbar-brand" href="">Administrator</a>
                         <ul class="nav navbar-top-links text-right mr-0 navbar-right">
                             <!-- /.dropdown -->
-
                             <li id="notification_btn">
-                                <a onclick="openNav()" href="#"><i class="fa fa-bell fa-fw"></i></a>
+                            <div style="background:#f8f8f8;">
+                            <span style="margin-right: -17px;margin-top: -2px;" class="badge badge-primary"><?php echo $numNotifications; ?></span>
+                            <a onclick="openNav()" href="#"><i class="fa fa-bell fa-fw"></i></a>
+                            
+                            </div>
                             </li>
 
                        

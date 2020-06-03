@@ -124,7 +124,7 @@ $total_pages = $db->totalPages;
             <tr>
                 <td><?php echo $row['order_id']; ?></td>
                 <td><a target="_blank_" href="../products/view_product.php?product_id=<?php echo $row['product_id'];  ?>&operation=view"><?php echo htmlspecialchars($row['product_name']); ?></a></td>
-                <td><?php echo htmlspecialchars($row['full_name']); ?></td>
+                <td><a target="_blank_" href="/associates/includes/view_customer.php?customer_id=<?php echo $row['user_id'];  ?>&operation=view"><?php echo htmlspecialchars($row['full_name']); ?></td>
             <td><?php echo htmlspecialchars($row['amount']); ?></td>
                 <td><?php echo htmlspecialchars($row['payment_type']); ?></td>
                 <td><?php echo htmlspecialchars($row['created_at']); ?></td>

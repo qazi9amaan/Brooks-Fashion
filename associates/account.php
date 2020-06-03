@@ -17,6 +17,8 @@ $numRejectedOrders = $db->where('orders.order_status', 'rejected')->where('assoc
 $numAcceptedOrders =$db->where('orders.order_status', 'accepted')->where('associate_accounts.id', $current_associate)->join("products", "orders.product_id=products.id", "INNER")->join("associate_accounts", "associate_accounts.id = products.product_owner", "INNER")->getValue ("orders", "count(*)");
 include_once('includes/header-nav.php');
 ?>
+
+<?php include 'assests/js/charts.php' ?>
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-8">
@@ -24,11 +26,50 @@ include_once('includes/header-nav.php');
         </div>
         <div class="col-lg-4">
         <div class="page-action-links text-right">
+            <?php if($numNewOrders==0)
+            ?>
+                <a href="/associates/panel-items/orders/orders.php" class="btn btn-danger"><span class="badge badge-light"><?php echo $numNewOrders;?></span> Orders</a>
+            <?php ?>
                 <a href="/associates/panel-items/products/add_product.php" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Add a Product</a>
             </div>
         </div>
         <!-- /.col-lg-12 -->
     </div>
+    <div class="row ">
+       <div class=" col-md-8 ">
+       <div class="panel panel-chart-white">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                        <span>Monthly Statistics</span>
+                        <div id="chart"></div>
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+       </div>
+       <div class="col-md-4">
+       <div class="panel panel-chart-white">
+           <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                        <span>Orders Details</span>
+                        <div id="order_details"></div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+       </div>
+       
+        <!-- /.col-lg-12 -->
+    </div>
+
+
+
+
+
     <!-- /.row -->
     <div class="row">
         <div class="col-lg-3 col-md-6">
