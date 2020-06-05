@@ -1625,9 +1625,18 @@ footer .copy-right .share span:hover {
     display: block !important;
 }
 
+.side_nav .navbar-nav a {
+    color: rgba(0, 0, 0, .5) !important;
+}
+
+.side_nav .navbar-nav a:hover,
+.side_nav .navbar-nav .active a {
+    color: rgba(0, 0, 0, .7) !important;
+}
+
 .side_nav .navbar-nav .nav-item {
     border-bottom: 1px solid #dee2e6 !important;
-    padding: .5rem;
+    padding: .19rem;
     text-align: center;
 }
 
@@ -1682,4 +1691,13 @@ footer .copy-right .share span:hover {
     #noti_Container {
         display: none;
     }
+}
+
+.header-add {
+    background: #185abc;
+    padding: 2px;
+}
+
+.header-add>* {
+    color: #fafafa;
 }

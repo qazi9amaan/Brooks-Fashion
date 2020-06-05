@@ -69,7 +69,7 @@
                         <h3>how to be a bwase</h3>
                         <h6><span class="price">$49</span> / <a href="#">Buy Now</a></h6>
                         <div class="hover">
-                            <a href="product-single.html">
+                            <a href="product-single.php">
                                 <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
                             </a>
                         </div>
@@ -82,7 +82,7 @@
                         <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
                         <span class="sale">Sale !</span>
                         <div class="hover">
-                            <a href="product-single.html">
+                            <a href="product-single.php">
                                 <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
                             </a>
                         </div>
@@ -94,7 +94,7 @@
                         <h3>7-day self publish...</h3>
                         <h6><span class="price">$49</span> / <a href="#">Buy Now</a></h6>
                         <div class="hover">
-                            <a href="product-single.html">
+                            <a href="product-single.php">
                                 <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
                             </a>
                         </div>
@@ -106,7 +106,7 @@
                         <h3>wendy doniger</h3>
                         <h6><span class="price">$49</span> / <a href="#">Buy Now</a></h6>
                         <div class="hover">
-                            <a href="product-single.html">
+                            <a href="product-single.php">
                                 <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
                             </a>
                         </div>
@@ -125,7 +125,7 @@
             <p>bte</p>
             <div class="btn-sec">
                 <a href="shop.php" class="btn yellow">shop books</a>
-                <a href="login.html" class="btn black">subscriptions</a>
+                <a href="login.php" class="btn black">subscriptions</a>
             </div>
         </div>
     </section>
@@ -198,89 +198,4 @@
             <img src="images/right-quote.png" alt="quote">
         </div>
     </section>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="address">
-                        <h4>Our Address</h4>
-                        <h6>The BookStore, PES University </h6>
-                        <h6>Call : 000 000 000</h6>
-                        <h6>Email : info@bookstore.com</h6>
-                    </div>
-
-                </div>
-                <div class="col-md-3">
-                    <div class="navigation">
-                        <h4>Navigation</h4>
-                        <ul>
-                            <li><a href="index.php">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="terms-conditions.html">Terms</a></li>
-                            <li><a href="products.html">Products</a></li>
-                        </ul>
-                    </div>
-                    <div class="navigation">
-                        <h4>Help</h4>
-                        <ul>
-                            <li><a href="">Shipping & Returns</a></li>
-                            <li><a href="privacy-policy.html">Privacy</a></li>
-                            <li><a href="faq.html">FAQ’s</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="form">
-                        <h3>Quick Contact us</h3>
-                        <h6>We are now offering some good discount on selected books go and shop them</h6>
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input placeholder="Name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" placeholder="Email" required>
-                                </div>
-                                <div class="col-md-12">
-                                    <textarea placeholder="Messege"></textarea>
-                                </div>
-                                <div class="col-md-12">
-                                    <button class="btn black">Alright, Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copy-right">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5>(C) 2019. All Rights Reserved. BookStore W</h5>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="share align-middle">
-                            <span class="fb"><i class="fa fa-facebook-official"></i></span>
-                            <span class="instagram"><i class="fa fa-instagram"></i></span>
-                            <span class="twitter"><i class="fa fa-twitter"></i></span>
-                            <span class="pinterest"><i class="fa fa-pinterest"></i></span>
-                            <span class="google"><i class="fa fa-google-plus"></i></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-    <script src="js/custom.js"></script>
-
-    </div>
-</body>
-
-</html>
+    <?php include 'includes/footer.php' ?>

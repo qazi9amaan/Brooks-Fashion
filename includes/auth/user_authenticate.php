@@ -4,6 +4,7 @@
 require_once  '/var/www/html/admin/config/config.php';
 session_start();
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 	$username = filter_input(INPUT_POST, 'phone_number');
@@ -26,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 			$_SESSION['user_logged_in'] = TRUE;
 			$_SESSION['public_user_id'] = $row['id'];
 			$_SESSION['user_account_status']=$row['account_status'];
-
+			
 			if ($remember)
             {
 				$series_id = randomString(16);
@@ -49,8 +50,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 				);
 				$db->update('auth_user_account', $update_remember);
 			}
-			// Authentication successfull redirect user
-			header('Location: /users');
+
+			if(isset($_POST['q']))
+			{
+				if($row['account_status']=='new'){
+					header('location: /users/account-setup.php?reg_id='.$_SESSION['public_user_id'].'&user='. $username.'&operation=create&q='.$_POST['q']);
+					exit;
+				}
+				header('Location:/'.$_POST['q']);
+				exit;
+			}else{
+				if($row['account_status']=='new'){
+					header('location: /users/account-setup.php?reg_id='.$_SESSION['public_user_id'].'&user='. $username.'&operation=create');
+					exit;
+				}
+				header('Location: /users');
+				exit;
+			}
 		}
         else
         {

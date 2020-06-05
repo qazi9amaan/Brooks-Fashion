@@ -23,7 +23,7 @@ $order_dir	= filter_input(INPUT_GET, 'order_dir');
 $search_str	= filter_input(INPUT_GET, 'search_str');
 $current_user = $_SESSION['public_user_id'] ;
 // Per page limit for pagination
-$pagelimit = 5;
+$pagelimit = 7;
 
 // Get current pagecostumers
 $page = filter_input(INPUT_GET, 'page');
@@ -74,25 +74,25 @@ $total_pages = $db->totalPages;
     margin:-1px;
 }
 </style>
-<div class="col mt-md-2">
+<div style="margin-bottom:95px;" class="col mt-md-2 ">
     <div class="container-fluid m-0 p-0">
         <div class="row p-0">
             <div class="col-md-12 p-0 bg-light">
                 <div class="breadcrumb mb-0">
-                    <a class="breadcrumb-item" href="index.php">Qazi Amaan</a>
+                    <a class="breadcrumb-item text-capitalize" href="index.php"><?php echo $user_full_name; ?></a>
                     <span class="breadcrumb-item active">Orders</span>
                 </div>
             </div>
 
-            <div class="col-12 p-0 mt-3 ">
-                <div class="d-flex mx-4 mt-2  border-bottom pb-2 align-items-center justify-content-between">
+            <div class="col-12 p-0 mt-3 mb-5">
+                <div class="d-flex mx-4 mt-2 mx-md-5  border-bottom pb-2 align-items-center justify-content-between">
                 <p class="  ml-1 h2 ">
                     My Orders
                 </p>
                 <i class="fa fa-search" aria-hidden="true"></i>
                 </div>
                 
-                <div class="p-3">
+                <div class="p-3 px-md-5">
                 <div class="order list-group" >
                 <?php foreach ($rows as $row): ?>
                    

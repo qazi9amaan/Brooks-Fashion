@@ -1,7 +1,11 @@
 <?php
 session_start();
 require_once '../admin/config/config.php';
-require_once 'includes/auth_validate.php';
+// If User has already logged in, redirect to dashboard page.
+if (isset($_SESSION['associate_logged_in']) && $_SESSION['associate_logged_in'] === TRUE)
+{
+	header('Location: account.php');
+}
 
 // Users class
 require_once 'lib/AssociateUsers/AssociateUsers.php';
@@ -77,22 +81,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
    </section>
  </div>
     <section class="static about-sec mt-2">
-      <div class="container mt-5">
+      <div class="container-fluid mt-5">
       <?php include  '../admin/includes/flash_messages.php'; ?>
 
         <div class="row">
-            <div class="col-md-6">
-                
-            </div>
+            
               
-            <div  class="col-md-6">
-                    <div id ="register_view" class="card">
+            <div  class="col-md-9 offset-2">
+            <div id ="register_view" class="card">
                             <div class="card-header">Associate Register</div>
+                            <div class="px-5">
                             <div class="card-body">
 
                                 <form class="form-horizontal" method="post" action="register.php">
 
-                                    <div class="form-group">
+                                    <div class="form-row">
+
+                                    <div class="form-group col-md-6 ">
                                         <label for="name" class="cols-sm-2 control-label">Your Name</label>
                                         <div class="cols-sm-10">
                                             <div class="input-group d-flex align-items-baseline">
@@ -101,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group col-md-6 pl-3">
                                         <label for="bussiness_name" class="cols-sm-2 control-label">Bussiness Name</label>
                                         <div class="cols-sm-10">
                                             <div class="input-group d-flex align-items-baseline">
@@ -110,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group col-md-12">
                                         <label for="address" class="cols-sm-2 control-label">Bussiness Address</label>
                                         <div class="cols-sm-10">
                                             <div class="input-group d-flex align-items-baseline">
@@ -119,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group col-md-6 ">
                                         <label for="email_address" class="cols-sm-2 control-label">Your Email</label>
                                         <div class="cols-sm-10">
                                             <div class="input-group d-flex align-items-baseline">
@@ -128,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group col-md-6 pl-3">
                                         <label for="phone" class="cols-sm-2 control-label">Phone Number</label>
                                         <div class="cols-sm-10">
                                             <div class="input-group d-flex align-items-baseline">
@@ -137,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group col-md-6 ">
                                         <label for="password" class="cols-sm-2 control-label">Password</label>
                                         <div class="cols-sm-10">
                                             <div class="input-group d-flex align-items-baseline">
@@ -146,7 +151,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group col-md-6 pl-3">
                                         <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
                                         <div class="cols-sm-10">
                                             <div class="input-group d-flex align-items-baseline">
@@ -155,16 +160,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group text-center pt-3">
+
+                                    </div>
+
+
+                                    <div class="form-group  col-md-4 ">
                                     <button type="submit" class="btn black btn-sm p-2 btn-block rounded login-button">Register</button>
                                     </div>
-                                    
-                                </form>
-                                <div class="pt-2">
+                                    <div class=" col-md-4">
                                         Already Have an account?
                                         <a id ="login_show_btn" href="index.php">Login</a>
-                                </div>
+                                    </div>
+                                </form>
+                                
 
+                            </div>
                             </div>
                     </div>
             </div>

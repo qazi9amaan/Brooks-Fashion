@@ -4,28 +4,13 @@ require_once  'admin/config/config.php';
 // Costumers class
 require_once  'admin/lib/Products/Products.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Book Store</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#03a6f3">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-
-<body>
     <?php include 'includes/header.php' ?>
 
     <div class="sticky-top bg-white">
     <div class="breadcrumb mb-0 border-top-1">
         <div class="container">
-            <a class="breadcrumb-item" href="index.html">Home</a>
+            <a class="breadcrumb-item" href="index.php">Home</a>
             <span class="breadcrumb-item active" >Shop</span>
             <a class="breadcrumb-item" href="shop.php">Categories</a>
 

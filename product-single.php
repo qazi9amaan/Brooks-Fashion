@@ -11,31 +11,49 @@ $db->where('id', $product_id);
 $product = $db->getOne('products');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Book Store</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#03a6f3">
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/styles.css">>
-</head>
-<style>
-    .carousel-item img{
-
-    }
-</style>
-<body>
 <?php include 'includes/header.php' ?>
+
+<!-- MODAL -->
+
+
+<div class="modal fade register_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Please Login First</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form method="POST" action="includes/auth/user_authenticate.php">
+          <div class="form-group">
+            <label for="phone_number" class="col-form-label">Phone Number</label>
+            <input type="text" class="form-control" id="phone_number" name="phone_number">
+          </div>
+          <div class="form-group">
+            <label for="password" class="col-form-label">Password</label>
+            <input type="password" class="form-control" id="password"  name="password" >
+          </div>
+          <input type="text" hidden  value="product-single.php?id=<?php echo $product_id?>" name="q" >
+
+      </div>
+      <div class="modal-footer">
+        <a href="register.php?q=product-single.php?id=<?php echo $product_id?>" type="button" class="btn">Register</a>
+        <button type="submit" class="btn black">Login</button>
+      </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+
     <div class="breadcrumb">
         <div class="container">
-            <a class="breadcrumb-item" href="index.html">Home</a>
+            <a class="breadcrumb-item" href="index.php">Home</a>
             <a class="breadcrumb-item" href="shop.php">Shop</a>
             <a href ="getallproducts.php?cat=<?php echo $product['product_category'] ?>" class="breadcrumb-item "><?php echo $product['product_category'] ?></a>
            
@@ -132,7 +150,11 @@ $product = $db->getOne('products');
                     </ul>
                     <div class="btn-sec">
                         <button class="btn ">Add To cart</button>
-                        <a href="/users/checkout.php?id=<?php echo $product['id'] ?>" class="btn black">Buy Now</a>
+                        <?php if(isset($_SESSION['user_logged_in'])){?>
+                            <a href="/users/checkout.php?id=<?php echo $product['id'] ?>" class="btn black">Buy Now</a>
+                        <?php }else{ ?>
+                            <a data-toggle="modal" data-target=".register_modal" href="#" class="btn black">Buy Now</a>
+                        <?php }?>
                     </div>
                 </div>
             </div>

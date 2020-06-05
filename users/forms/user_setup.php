@@ -9,7 +9,7 @@
         <span class="required-star">*</span>
     </div>
     <div class="col-md-4">
-        <input type="text" name="phone" pattern="[0-9]{10}" value="<?php echo ($edit ? $customer['phone'] : ''); ?>" placeholder="Phone " required>
+        <input type="text" name="phone" pattern="[0-9]{10}" value="<?php echo ($edit ? $customer['phone'] : $phone_number); ?>" placeholder="Phone " required>
         <span class="required-star">*</span>
     </div>
 

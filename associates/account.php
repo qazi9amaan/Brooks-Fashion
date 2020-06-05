@@ -24,6 +24,7 @@ include_once('includes/header-nav.php');
         <div class="col-lg-8">
             <h1 class="page-header">Dashboard</h1>
         </div>
+        
         <div class="col-lg-4">
         <div class="page-action-links text-right">
             <?php if($numNewOrders==0)
@@ -35,6 +36,8 @@ include_once('includes/header-nav.php');
         </div>
         <!-- /.col-lg-12 -->
     </div>
+    <?php include BASE_PATH.'/includes/flash_messages.php'; ?>
+
     <div class="row ">
        <div class=" col-md-8 ">
        <div class="panel panel-chart-white">

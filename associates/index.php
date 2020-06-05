@@ -64,48 +64,66 @@ if (isset($_COOKIE['associate_series_id']) && isset($_COOKIE['associate_remember
     <link rel="stylesheet" href="assests/css/styles-affiliates.css">
 
 </head>
-
-<body>
+<style>
+@media (min-width:768px) {
+    .mt-md-11, .my-md-11 {
+    margin-top: 9rem !important;
+    }
+}
+#bg{
+    background: url(/images/associate_main.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity : 0.9;
+  
+}
+.card-header i{
+    font-size:20px;
+}
+</style>
+<body id="bg">
+<div class="sticky-top  ">
     <?php include 'includes/header.php'?>
-   
-    <div class="sticky-top  ">
-
+</div>
    <section class="header-add" class="mt-0">
         <center>
          <span>   ****  GOOD THINGS TAKE TIME WE ARE HERE   ****</span>
         </center>
    </section>
- </div>
-    <section class="static about-sec mt-2">
-      <div class="container mt-5">
+    <section   class="static about-sec mt-4 mt-md-11 mb-4">
+      <div class="container">
       <?php include  '../admin/includes/flash_messages.php'; ?>
      
           <div class="row">
-              <div class="col-md-6">
-                
-              </div>
               
-              <div  class="col-md-6">
+              
+              <div  class="col-md-6 offset-md-8">
                     <div  id ="login_view" class="card">
-                            <div class="card-header">Associate Login</div>
+                            <div class="card-header"><i class="fa fa-handshake-o"></i> &nbsp;Associate Login</div>
                             <div class="card-body">
-
+                                
                                 <form class="form-horizontal" method="post" action="includes/authenticate.php">
                                 <?php if (isset($_SESSION['login_failure'])): ?>
-            <div class="alert alert-danger alert-dismissable ">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <?php
-                echo $_SESSION['login_failure'];
-                unset($_SESSION['login_failure']);
-                ?>
-            </div>
-        <?php endif; ?>
-                                    <div class="form-group">
-                                        <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                                            <div class="alert alert-danger alert-dismissable ">
+                                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                <?php
+                                                echo $_SESSION['login_failure'];
+                                                unset($_SESSION['login_failure']);
+                                                ?>
+                                            </div>
+                                        <?php endif; ?>
+                                   <div class="px-3">
+                                    <div class="text-center py-4">
+                                    <i style="font-size:8.5rem;"class="fa fa-user-circle-o"></i>
+
+                                    </div>
+                                   <div class="form-group">
+                                        <label for="email" class="cols-sm-2 control-label">Your email</label>
                                         <div class="cols-sm-10">
-                                            <div class="input-group d-flex align-items-baseline">
-                                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control ml-2" name="email" id="email" placeholder="Enter your Email" />
+                                            <div class="input-group ">
+                                                <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" />
                                             </div>
                                         </div>
                                     </div>
@@ -113,17 +131,12 @@ if (isset($_COOKIE['associate_series_id']) && isset($_COOKIE['associate_remember
                                     <div class="form-group">
                                         <label for="password" class="cols-sm-2 control-label">Password</label>
                                         <div class="cols-sm-10">
-                                            <div class="input-group d-flex align-items-baseline">
-                                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                                <input type="password" class="form-control ml-2" name="password" id="password" placeholder="Enter your Password" />
+                                            <div class="input-group ">
+                                                <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input class="form-control" name="remember" type="checkbox" value="1">Remember Me
-                                        </label>
-                                    </div>
+                                    
                                    
                                     <div class="form-group text-center pt-3">
                                         <button type="submit" class="btn black btn-sm p-2 btn-block rounded login-button">Login</button>
@@ -132,6 +145,8 @@ if (isset($_COOKIE['associate_series_id']) && isset($_COOKIE['associate_remember
                                        Not yet registered?
                                         <a id ="register_show_btn" href="register.php">Register Now</a>
                                         </div>
+
+                                   </div>
                                 </form>
                             </div>
 
@@ -143,7 +158,6 @@ if (isset($_COOKIE['associate_series_id']) && isset($_COOKIE['associate_remember
     </section>
   
 
-    <?php include 'includes/footer-nav.php' ?>
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>

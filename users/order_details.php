@@ -28,7 +28,7 @@ $order = $db->getOne("orders");
         <div class="row p-0">
             <div class="col-md-12 p-0 bg-light">
                 <div class="breadcrumb mb-0">
-                    <a class="breadcrumb-item" href="index.php">Qazi Amaan</a>
+                <a class="breadcrumb-item text-capitalize" href="index.php"><?php echo $user_full_name; ?></a>
                     <a class="breadcrumb-item" href="index.php">Orders</a>
                     <span class="breadcrumb-item active"><?php echo $order['product_name']; ?></span>
                 </div>

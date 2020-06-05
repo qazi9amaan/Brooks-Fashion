@@ -74,10 +74,10 @@ $numNotifications=$numActivities+$numOrders;
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i></a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="/admin/admin-panel-items/Admin/edit_admin.php?admin_user_id=<?php echo $_SESSION['user_id']; ?>&operation=edit"><i class="fa fa-user fa-fw"></i> User Profile</a></li>
-                                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
+                                    <li><a href="/associates/panel-items/profile/edit-profile.php"><i class="fa fa-user fa-fw"></i> User Profile</a></li>
+                                    <li><a href="/associates/panel-items/profile/change-password.php"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="/admin/logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                                    <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                                 </ul>
                                 <!-- /.dropdown-user -->
                             </li>
