@@ -42,157 +42,111 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	if ($last_id)
 	{
 		$_SESSION['success'] = 'Your Associate Account is successfully created!';
-		header('location: index.php');
+		header('location: login.php');
 		exit;
 	}
 }
 ?>
 
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Book Store</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#03a6f3">
-
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="assests/css/styles-affiliates.css">
-
-</head>
+<!--  -->
+<?php include '../associates/includes/header.php'; ?>
 <style>
+    #intro{
+        padding: 150px 0 20px 0;
 
+    }
 </style>
-<body>
-    <?php include 'includes/header.php'?>
-   
-    <div class="sticky-top  ">
-
-   <section class="header-add" class="mt-0">
-        <center>
-         <span>   ****  GOOD THINGS TAKE TIME WE ARE HERE   ****</span>
-        </center>
-   </section>
- </div>
-    <section class="static about-sec mt-2">
-      <div class="container-fluid mt-5">
-      <?php include  '../admin/includes/flash_messages.php'; ?>
-
-        <div class="row">
-            
-              
-            <div  class="col-md-9 offset-2">
-            <div id ="register_view" class="card">
-                            <div class="card-header">Associate Register</div>
-                            <div class="px-5">
-                            <div class="card-body">
-
-                                <form class="form-horizontal" method="post" action="register.php">
-
-                                    <div class="form-row">
-
-                                    <div class="form-group col-md-6 ">
-                                        <label for="name" class="cols-sm-2 control-label">Your Name</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group d-flex align-items-baseline">
-                                                <span class="input-group-addon "><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control ml-2" name="name" id="name" placeholder="Enter your Name" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-6 pl-3">
-                                        <label for="bussiness_name" class="cols-sm-2 control-label">Bussiness Name</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group d-flex align-items-baseline">
-                                                <span class="input-group-addon "><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control ml-2" name="bussiness_name" id="bussiness_name" placeholder="Enter your Bussiness Name" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="address" class="cols-sm-2 control-label">Bussiness Address</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group d-flex align-items-baseline">
-                                                <span class="input-group-addon "><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control ml-2" name="address" id="address" placeholder="Enter your Bussiness Address" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-6 ">
-                                        <label for="email_address" class="cols-sm-2 control-label">Your Email</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group d-flex align-items-baseline">
-                                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control ml-2" name="email_address" id="email_address" placeholder="Enter your Email" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-6 pl-3">
-                                        <label for="phone" class="cols-sm-2 control-label">Phone Number</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group d-flex align-items-baseline">
-                                                <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
-                                                <input type="number" class="form-control ml-2" name="phone" id="phone" placeholder="Enter your Phone Number" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-6 ">
-                                        <label for="password" class="cols-sm-2 control-label">Password</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group d-flex align-items-baseline">
-                                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                                <input type="password" class="form-control ml-2" name="password" id="password" placeholder="Enter your Password" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-6 pl-3">
-                                        <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group d-flex align-items-baseline">
-                                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                                <input type="password" class="form-control ml-2"  id="confirm" placeholder="Confirm your Password" />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    </div>
 
 
-                                    <div class="form-group  col-md-4 ">
-                                    <button type="submit" class="btn black btn-sm p-2 btn-block rounded login-button">Register</button>
-                                    </div>
-                                    <div class=" col-md-4">
-                                        Already Have an account?
-                                        <a id ="login_show_btn" href="index.php">Login</a>
-                                    </div>
-                                </form>
-                                
+<!-- LOGIN AND TOP  -->
+<section id="intro" class="clearfix">
+</section>
 
-                            </div>
-                            </div>
+
+
+<main id="main">
+    <!-- REGISTER -->
+    <section id="register">
+        <div class="container">
+            <header class="section-header mt-5">
+                <h3>Start selling today!</h3>
+                <p>Register now and be a part of us</p>
+            </header>
+            <form class="form-horizontal" method="post" action="register.php">
+                <div class="form-row">
+                <?php include BASE_PATH . '/includes/flash_messages.php'; ?>
+
+                <div class="form-group col-md-6 ">
+                    <label for="name" class="cols-sm-2 control-label">Your Name</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group d-flex align-items-baseline">
+                            <input required type="text" class="form-control " name="name" id="name" placeholder="Enter your Name" />
+                        </div>
                     </div>
-            </div>
-        </div>
-      </div>
-    </section>
-  
+                </div>
+                <div class="form-group col-md-6 ">
+                    <label for="bussiness_name" class="cols-sm-2 control-label">Bussiness Name</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group d-flex align-items-baseline">
+                            
+                            <input required type="text" class="form-control " name="bussiness_name" id="bussiness_name" placeholder="Enter your Bussiness Name" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="address" class="cols-sm-2 control-label">Bussiness Address</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group d-flex align-items-baseline">
+                            <textarea name="address"class="form-control " placeholder="Enter your Bussiness Address" id="address"  rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6 ">
+                    <label for="email_address" class="cols-sm-2 control-label">Your Email</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group d-flex align-items-baseline">
+                            <input required type="text" class="form-control " name="email_address" id="email_address" placeholder="Enter your Email" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6 ">
+                    <label for="phone" class="cols-sm-2 control-label">Phone Number</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group d-flex align-items-baseline">
+                            <input required type="number" class="form-control " name="phone" id="phone" placeholder="Enter your Phone Number" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6 ">
+                    <label for="password" class="cols-sm-2 control-label">Password</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group d-flex align-items-baseline">
+                            <input required type="password" class="form-control " name="password" id="password" placeholder="Enter your Password" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6 ">
+                    <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group d-flex align-items-baseline">
+                            <input required type="password" class="form-control "  id="confirm" placeholder="Confirm your Password" />
+                        </div>
+                    </div>
+                </div>
 
-   <?php include 'includes/footer-nav.php' ?>
+                </div>
+                <div class="form-group  text-center col-md-12  mt-5">
+                    <button type="submit" class="btn btn-primary ">Register</button>
+                    <a href="login.php" class="btn btn-outline-primary ">Login to your account</a>
 
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
-    <script src="/js/custom.js"></script>
-    <script>
-   
+                </div>
+            </form>
+        </section >
+        <br>
+        <section class="mt-5">
+       
+        </section>
 
-    </script>
-</body>
+</main>
 
-</html>
+<?php include '../associates/includes/footer-2.php' ?>
