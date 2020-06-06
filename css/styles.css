@@ -1701,3 +1701,33 @@ footer .copy-right .share span:hover {
 .header-add>* {
     color: #fafafa;
 }
+
+.option_panel .card div {
+    cursor: pointer;
+}
+
+.indicators i {
+    font-size: 200px;
+    color: #007bff
+}
+
+.razorpay-payment-button {
+    color: #fff;
+    text-decoration: none;
+    background-color: #dc3545;
+    font-weight: 400;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    cursor: pointer;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.razorpay-payment-button:hover {
+    color: #fff;
+    background-color: #c82333;
+    border-color: #bd2130;
+    text-decoration: none;
+}

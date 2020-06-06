@@ -77,7 +77,7 @@ $numNotifications=$numActivities+$numOrders;
                                     <li><a href="/associates/panel-items/profile/edit-profile.php"><i class="fa fa-user fa-fw"></i> User Profile</a></li>
                                     <li><a href="/associates/panel-items/profile/change-password.php"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                                    <li><a href="/associates/logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                                 </ul>
                                 <!-- /.dropdown-user -->
                             </li>

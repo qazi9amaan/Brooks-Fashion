@@ -102,7 +102,7 @@ $total_pages = $db->totalPages;
                             $first_img = $images[0];
                             $first_imgURL = '/admin/uploads/'.$first_img;
                             switch($row['order_status']){
-                                case "rejected":
+                                case "accepted":
                                     $state ="bg-danger text-white";
                                     break;
                                 case "confirming":
@@ -124,7 +124,20 @@ $total_pages = $db->totalPages;
                                 <p class="mb-0 text-capitalize">Quality : <?php echo $row['product_quality'];?> </p>
                                 <p class="mb-0">Price : <?php echo $row['amount'];?>/=</p>
 
-                                <small class="text-capitalize">Status : <?php echo $row['order_status'];?></small>
+                                <small class="text-capitalize">Status : <?php
+                                    if($row['order_status'] =='accepted')
+                                    {
+                                        echo 'Accepted, please complete payment...';
+                                    }
+                                    else if($row['order_status'] =='delivering')
+                                    {
+                                        echo 'Your order is being shipped please be patient!';
+                                    }
+                                    else{
+                                        echo $row['order_status'];
+                                    }
+                                
+                                ?></small>
                                 </div>
                             </div>                   
                         </a>

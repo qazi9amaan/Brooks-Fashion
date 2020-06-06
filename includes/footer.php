@@ -34,7 +34,7 @@
                 <div class="col-md-5">
                     <div class="form">
                         <h3>Ecommerce Associates </h3>
-                        <h6 class="text-justify">We are now offering an associate based ecommercing, if you want to sell your products nation-wide, please visit </h6>
+                        <h6 class="text-justify">We are now offering an associate based ecommercing, if you want to sell your products nation-wide, please visit <a href="/associates/"> associate panel</a></h6>
                       
 
                         
@@ -67,7 +67,7 @@
                                     <button class="btn black">Alright, Login</button>
                                 </div>
                                 <div class="col  ">
-                                <h5>Not yet registered? <a href="/associates/register.php">Register here</a></h5>
+                                <p>Not yet registered? <a href="/associates/register.php">Register here</a></p>
                                 </div>
                             <?php } ?>
                             </div>
