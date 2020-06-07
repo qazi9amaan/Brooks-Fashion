@@ -15,6 +15,8 @@ $numDeliveredOrders = $db->where('orders.order_status', 'delivered')->where('ass
 $numNewOrders = $db->where('orders.order_status', 'confirming')->where('associate_accounts.id', $current_associate)->join("products", "orders.product_id=products.id", "INNER")->join("associate_accounts", "associate_accounts.id = products.product_owner", "INNER")->getValue ("orders", "count(*)");
 $numRejectedOrders = $db->where('orders.order_status', 'rejected')->where('associate_accounts.id', $current_associate)->join("products", "orders.product_id=products.id", "INNER")->join("associate_accounts", "associate_accounts.id = products.product_owner", "INNER")->getValue ("orders", "count(*)");
 $numAcceptedOrders =$db->where('orders.order_status', 'accepted')->where('associate_accounts.id', $current_associate)->join("products", "orders.product_id=products.id", "INNER")->join("associate_accounts", "associate_accounts.id = products.product_owner", "INNER")->getValue ("orders", "count(*)");
+$numDeliveringOrders =$db->where('orders.order_status', 'delivering')->where('associate_accounts.id', $current_associate)->join("products", "orders.product_id=products.id", "INNER")->join("associate_accounts", "associate_accounts.id = products.product_owner", "INNER")->getValue ("orders", "count(*)");
+
 include_once('includes/header-nav.php');
 ?>
 
@@ -213,7 +215,30 @@ include_once('includes/header-nav.php');
                 </a>
             </div>
         </div>
-        <!-- /.col-lg-4 -->
+        <!-- /.col-lg-4 -->    
+        
+         <div class="col-lg-4">
+        <div class="panel panel-yellow">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-thumbs-up fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge"><?php echo $numDeliveringOrders;  ?></div>
+                            <div>To be delivered / Approved Orders</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="panel-items/orders/delivering_orders.php">
+                    <div class="panel-footer">
+                        <span class="pull-left">View All delivery orders</span>
+                        <span class="pull-right"><i class="fa  fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
     <!-- /.row -->
 </div>

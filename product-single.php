@@ -133,7 +133,18 @@ $product = $db->getOne('products');
                     <!--/main slider carousel-->
                 </div>
                 <div class="col-md-6 slider-content">
-                    <p><?php echo $product['product_name'] ?> </p>
+                    <?php if($product['product_belongs_to'] != 'owner'){?>
+                    <div class="bg-dark p-3 mb-4 text-white text-uppercase text-center">
+                            <?php 
+                            $name= $db->where('id',$product['product_owner'])->getValue('associate_accounts','bussiness_name');
+                            echo $name;
+                            ?>
+
+
+                    </div>
+                            <?php }?> 
+                                               <p><?php echo $product['product_name']; ?> </p>
+
                     <p class="text-justify"><?php echo $product['product_desc'] ?></p>
                     <p><strong><?php echo $product['product_quality'] ?></strong> Quality</p>
                     <ul>

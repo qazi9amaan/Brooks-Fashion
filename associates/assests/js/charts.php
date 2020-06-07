@@ -10,6 +10,7 @@
  $rejected_orders  = 0;
  $new_orders  = 0;
  $delivered_orders  = 0;
+ $delivering_orders =0;
 
  $result =  $db->where('owner',$current_associate)->get('orders ',null,'order_status');
  foreach ($result as $row):
@@ -26,11 +27,14 @@
         case "delivered":
             $delivered_orders+=1;
         break;
+        case "delivering":
+          $delivering_orders+=1;
+      break;
         default:
       }
 
     endforeach;
- $total_orders=$accepted_orders +$rejected_orders +$new_orders +$delivered_orders;
+ $total_orders=$accepted_orders +$rejected_orders +$new_orders +$delivered_orders+$delivering_orders;
   
 ?>
 <!-- MONTHLY STATICTS -->
@@ -64,7 +68,9 @@ window.onload = function() {
         series: [<?php echo $accepted_orders ;?>,
             <?php echo $rejected_orders;?>,
             <?php echo  $new_orders; ?>,
-            <?php echo $delivered_orders; ?>
+            <?php echo $delivered_orders; ?>,
+            <?php echo $delivering_orders; ?>
+
         ],
         chart: {
             height: 300,
@@ -90,7 +96,7 @@ window.onload = function() {
                 }
             }
         },
-        labels: ['Accepted', 'Rejected', 'Recieved','Delivered'],
+        labels: ['Accepted', 'Rejected', 'Recieved','Delivered','Approved'],
     };
     var chart = new ApexCharts(document.querySelector("#order_details"), options);
     chart.render();

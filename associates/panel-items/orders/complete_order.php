@@ -20,7 +20,8 @@ if ($id && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $stat=$db->update('orders', $data_to_db);
     
     if($stat){
-
+        $db = getDbInstance();
+        $db->where('order_id',$id)->delete('order_notifcations');
         $notification['notification_type']="assocaite_order_completed";
         $notification['id']=$id;
         $last_id = $db->insert('admin_notifications', $notification);

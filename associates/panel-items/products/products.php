@@ -143,7 +143,7 @@ $total_pages = $db->totalPages;
             <!-- Delete Confirmation Modal -->
             <div class="modal fade" id="confirm-delete-<?php echo $row['id']; ?>" role="dialog">
                 <div class="modal-dialog">
-                    <form action="delete_product.php" method="POST">
+                    <form action="/admin/admin-panel-items/Products/delete_product.php" method="POST">
                         <!-- Modal content -->
                         <div class="modal-content">
                             <div class="modal-header">

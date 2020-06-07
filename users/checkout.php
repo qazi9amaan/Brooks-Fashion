@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $data_to_db['product_id'] = $product_id;
     $data_to_db['owner'] =$product['product_owner'] ;
     $data_to_db['user_id'] = $user_id;
-    $data_to_db['payment_type'] = 'cod';
+    $data_to_db['payment_type'] = 'not-yet';
     $data_to_db['ordered_at'] = date('Y-m-d H:i:s');
 	$db = getDbInstance();
 	$last_id = $db->insert('orders', $data_to_db);

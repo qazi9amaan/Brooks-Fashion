@@ -112,7 +112,8 @@ $numNotifications=$numActivities+$numOrders;
                                             <li><a href="/associates/panel-items/orders/orders.php"><i class="fa fa-shopping-bag fa-fw"></i> Orders</a></li>
                                             <li><a href="/associates/panel-items/orders/accepted_orders.php"><i class="fa  fa-check fa-fw"></i>  Accepted Orders</a></li>
                                             <li><a href="/associates/panel-items/orders/rejected_orders.php"><i class="fa  fa-remove fa-fw"></i> Rejected Orders</a></li>
-                                            <li><a href="/associates/panel-items/orders/delivered_orders.php"><i class="fa  fa-truck fa-fw"></i> Delievered Orders</a></li>
+                                            <li><a href="/associates/panel-items/orders/delivered_orders.php"><i class="fa  fa-truck fa-fw"></i> Delivered Orders</a></li>
+                                            <li><a href="/associates/panel-items/orders/delivering_orders.php"><i class="fa  fa-thumbs-up fa-fw"></i> To be delivered Orders</a></li>
 
 
                                          

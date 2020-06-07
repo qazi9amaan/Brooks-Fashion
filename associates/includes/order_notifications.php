@@ -17,6 +17,14 @@
                             $class="";
                             $link ='/associates/panel-items/orders/orders.php';
                             break;
+                        case "user_approved_order":
+                            $product = $db2->where('id',$order['product_id'])->getOne("products");
+                            $name= $db2->where('user',$order['user_id'])->getOne("user_profiles");
+                            $msg =  "<strong>" .$name['full_name'].'</strong> has successfully approved the payment method for <strong>'.$product['product_name']."</strong>, please proceed ahead.";
+                            $icon ='fa fa-thumbs-up fa-fw';
+                            $class="";
+                            $link ='/associates/panel-items/orders/delivering_orders.php';
+                            break;
                        
                     }
 
