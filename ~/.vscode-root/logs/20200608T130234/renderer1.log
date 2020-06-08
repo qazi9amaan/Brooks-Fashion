@@ -1,0 +1,28 @@
+[2020-06-08 13:03:11.321] [renderer1] [error] Cannot read property 'document' of undefined: TypeError: Cannot read property 'document' of undefined
+    at decorate (/home/qaziamaan/.vscode/extensions/jzmstrjp.color-the-tag-name-0.17.0/extension.js:120:26)
+    at /home/qaziamaan/.vscode/extensions/jzmstrjp.color-the-tag-name-0.17.0/extension.js:110:9
+    at e.fire (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:48:497)
+    at /usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:719:927
+    at e.fire (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:48:497)
+    at e.$acceptDocumentsAndEditorsDelta (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:615:330)
+    at e._doInvokeHandler (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:752:683)
+    at e._invokeHandler (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:752:375)
+    at e._receiveRequest (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:751:14)
+    at e._receiveOneMessage (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:749:832)
+    at /usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:748:34
+    at e.fire (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:48:497)
+    at v.fire (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:206:615)
+    at /usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:919:744
+    at e.fire (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:48:497)
+    at v.fire (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:206:615)
+    at t.PersistentProtocol._receiveMessage (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:211:17)
+    at /usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:208:155
+    at e.fire (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:48:497)
+    at p.acceptChunk (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:204:129)
+    at /usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:203:483
+    at Socket.t (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:212:565)
+    at Socket.emit (events.js:203:13)
+    at addChunk (_stream_readable.js:295:12)
+    at readableAddChunk (_stream_readable.js:276:11)
+    at Socket.Readable.push (_stream_readable.js:210:10)
+    at Pipe.onStreamRead (internal/stream_base_commons.js:166:17)

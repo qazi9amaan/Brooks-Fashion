@@ -1,0 +1,101 @@
+[2020-06-08 13:02:37.057] [exthost] [info] extension host started
+[2020-06-08 13:02:37.085] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2020-06-08 13:02:37.085] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2020-06-08 13:02:37.089] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2020-06-08 13:02:37.089] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/emmet/dist/extension
+[2020-06-08 13:02:37.113] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.git","_lower":"vscode.git"},"activationEvent":"*"}
+[2020-06-08 13:02:37.113] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/git/dist/main
+[2020-06-08 13:02:37.158] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication {"startup":true,"extensionId":{"value":"vscode.github-authentication","_lower":"vscode.github-authentication"},"activationEvent":"*"}
+[2020-06-08 13:02:37.158] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/github-authentication/dist/extension.js
+[2020-06-08 13:02:37.162] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2020-06-08 13:02:37.162] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2020-06-08 13:02:37.165] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-result {"startup":true,"extensionId":{"value":"vscode.search-result","_lower":"vscode.search-result"},"activationEvent":"*"}
+[2020-06-08 13:02:37.165] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/search-result/dist/extension.js
+[2020-06-08 13:02:37.166] [exthost] [info] ExtensionService#_doActivateExtension vscode.vscode-account {"startup":true,"extensionId":{"value":"vscode.vscode-account","_lower":"vscode.vscode-account"},"activationEvent":"*"}
+[2020-06-08 13:02:37.166] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/vscode-account/dist/extension.js
+[2020-06-08 13:02:37.169] [exthost] [info] ExtensionService#_doActivateExtension CoenraadS.bracket-pair-colorizer {"startup":true,"extensionId":{"value":"CoenraadS.bracket-pair-colorizer","_lower":"coenraads.bracket-pair-colorizer"},"activationEvent":"*"}
+[2020-06-08 13:02:37.170] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/qaziamaan/.vscode/extensions/coenraads.bracket-pair-colorizer-1.0.61/out/src/extension
+[2020-06-08 13:02:37.183] [exthost] [info] ExtensionService#_doActivateExtension ionutvmi.path-autocomplete {"startup":true,"extensionId":{"value":"ionutvmi.path-autocomplete","_lower":"ionutvmi.path-autocomplete"},"activationEvent":"*"}
+[2020-06-08 13:02:37.183] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/qaziamaan/.vscode/extensions/ionutvmi.path-autocomplete-1.13.6/out/src/extension
+[2020-06-08 13:02:37.189] [exthost] [info] ExtensionService#_doActivateExtension jzmstrjp.color-the-tag-name {"startup":true,"extensionId":{"value":"jzmstrjp.color-the-tag-name","_lower":"jzmstrjp.color-the-tag-name"},"activationEvent":"*"}
+[2020-06-08 13:02:37.189] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/qaziamaan/.vscode/extensions/jzmstrjp.color-the-tag-name-0.17.0/extension
+[2020-06-08 13:02:37.190] [exthost] [info] ExtensionService#_doActivateExtension lihui.vs-color-picker {"startup":true,"extensionId":{"value":"lihui.vs-color-picker","_lower":"lihui.vs-color-picker"},"activationEvent":"*"}
+[2020-06-08 13:02:37.190] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/qaziamaan/.vscode/extensions/lihui.vs-color-picker-1.0.0/out/src/extension
+[2020-06-08 13:02:37.191] [exthost] [info] ExtensionService#_doActivateExtension PKief.material-icon-theme {"startup":true,"extensionId":{"value":"PKief.material-icon-theme","_lower":"pkief.material-icon-theme"},"activationEvent":"*"}
+[2020-06-08 13:02:37.191] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/qaziamaan/.vscode/extensions/pkief.material-icon-theme-4.1.0/dist/extension
+[2020-06-08 13:02:37.200] [exthost] [info] ExtensionService#_doActivateExtension pranaygp.vscode-css-peek {"startup":true,"extensionId":{"value":"pranaygp.vscode-css-peek","_lower":"pranaygp.vscode-css-peek"},"activationEvent":"*"}
+[2020-06-08 13:02:37.200] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/qaziamaan/.vscode/extensions/pranaygp.vscode-css-peek-3.0.2/out/client/src/extension
+[2020-06-08 13:02:37.231] [exthost] [info] ExtensionService#_doActivateExtension vincaslt.highlight-matching-tag {"startup":true,"extensionId":{"value":"vincaslt.highlight-matching-tag","_lower":"vincaslt.highlight-matching-tag"},"activationEvent":"*"}
+[2020-06-08 13:02:37.231] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/qaziamaan/.vscode/extensions/vincaslt.highlight-matching-tag-0.9.9/out/src/extension
+[2020-06-08 13:02:37.239] [exthost] [info] ExtensionService#_doActivateExtension Zignd.html-css-class-completion {"startup":true,"extensionId":{"value":"Zignd.html-css-class-completion","_lower":"zignd.html-css-class-completion"},"activationEvent":"*"}
+[2020-06-08 13:02:37.239] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/qaziamaan/.vscode/extensions/zignd.html-css-class-completion-1.19.0/out/src/extension
+[2020-06-08 13:02:37.472] [exthost] [info] eager extensions activated
+[2020-06-08 13:02:37.501] [exthost] [error] Activating extension jzmstrjp.color-the-tag-name failed due to an error:
+[2020-06-08 13:02:37.508] [exthost] [error] TypeError: Cannot read property 'document' of undefined
+    at decorate (/home/qaziamaan/.vscode/extensions/jzmstrjp.color-the-tag-name-0.17.0/extension.js:120:26)
+    at activate (/home/qaziamaan/.vscode/extensions/jzmstrjp.color-the-tag-name-0.17.0/extension.js:116:5)
+    at Function._callActivateOptional (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:788:244)
+    at Function._callActivate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:787:909)
+    at /usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:786:960
+    at async Promise.all (index 9)
+[2020-06-08 13:02:54.643] [exthost] [info] extension host started
+[2020-06-08 13:02:54.691] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2020-06-08 13:02:54.691] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2020-06-08 13:02:54.693] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2020-06-08 13:02:54.693] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/emmet/dist/extension
+[2020-06-08 13:02:54.704] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.git","_lower":"vscode.git"},"activationEvent":"*"}
+[2020-06-08 13:02:54.704] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/git/dist/main
+[2020-06-08 13:02:54.720] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication {"startup":true,"extensionId":{"value":"vscode.github-authentication","_lower":"vscode.github-authentication"},"activationEvent":"*"}
+[2020-06-08 13:02:54.720] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/github-authentication/dist/extension.js
+[2020-06-08 13:02:54.722] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2020-06-08 13:02:54.722] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2020-06-08 13:02:54.724] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-result {"startup":true,"extensionId":{"value":"vscode.search-result","_lower":"vscode.search-result"},"activationEvent":"*"}
+[2020-06-08 13:02:54.724] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/search-result/dist/extension.js
+[2020-06-08 13:02:54.725] [exthost] [info] ExtensionService#_doActivateExtension vscode.vscode-account {"startup":true,"extensionId":{"value":"vscode.vscode-account","_lower":"vscode.vscode-account"},"activationEvent":"*"}
+[2020-06-08 13:02:54.725] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/vscode-account/dist/extension.js
+[2020-06-08 13:02:54.727] [exthost] [info] ExtensionService#_doActivateExtension CoenraadS.bracket-pair-colorizer {"startup":true,"extensionId":{"value":"CoenraadS.bracket-pair-colorizer","_lower":"coenraads.bracket-pair-colorizer"},"activationEvent":"*"}
+[2020-06-08 13:02:54.727] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/qaziamaan/.vscode/extensions/coenraads.bracket-pair-colorizer-1.0.61/out/src/extension
+[2020-06-08 13:02:54.738] [exthost] [info] ExtensionService#_doActivateExtension ionutvmi.path-autocomplete {"startup":true,"extensionId":{"value":"ionutvmi.path-autocomplete","_lower":"ionutvmi.path-autocomplete"},"activationEvent":"*"}
+[2020-06-08 13:02:54.738] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/qaziamaan/.vscode/extensions/ionutvmi.path-autocomplete-1.13.6/out/src/extension
+[2020-06-08 13:02:54.743] [exthost] [info] ExtensionService#_doActivateExtension jzmstrjp.color-the-tag-name {"startup":true,"extensionId":{"value":"jzmstrjp.color-the-tag-name","_lower":"jzmstrjp.color-the-tag-name"},"activationEvent":"*"}
+[2020-06-08 13:02:54.743] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/qaziamaan/.vscode/extensions/jzmstrjp.color-the-tag-name-0.17.0/extension
+[2020-06-08 13:02:54.744] [exthost] [info] ExtensionService#_doActivateExtension lihui.vs-color-picker {"startup":true,"extensionId":{"value":"lihui.vs-color-picker","_lower":"lihui.vs-color-picker"},"activationEvent":"*"}
+[2020-06-08 13:02:54.744] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/qaziamaan/.vscode/extensions/lihui.vs-color-picker-1.0.0/out/src/extension
+[2020-06-08 13:02:54.745] [exthost] [info] ExtensionService#_doActivateExtension PKief.material-icon-theme {"startup":true,"extensionId":{"value":"PKief.material-icon-theme","_lower":"pkief.material-icon-theme"},"activationEvent":"*"}
+[2020-06-08 13:02:54.745] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/qaziamaan/.vscode/extensions/pkief.material-icon-theme-4.1.0/dist/extension
+[2020-06-08 13:02:54.748] [exthost] [info] ExtensionService#_doActivateExtension pranaygp.vscode-css-peek {"startup":true,"extensionId":{"value":"pranaygp.vscode-css-peek","_lower":"pranaygp.vscode-css-peek"},"activationEvent":"*"}
+[2020-06-08 13:02:54.748] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/qaziamaan/.vscode/extensions/pranaygp.vscode-css-peek-3.0.2/out/client/src/extension
+[2020-06-08 13:02:54.773] [exthost] [info] ExtensionService#_doActivateExtension vincaslt.highlight-matching-tag {"startup":true,"extensionId":{"value":"vincaslt.highlight-matching-tag","_lower":"vincaslt.highlight-matching-tag"},"activationEvent":"*"}
+[2020-06-08 13:02:54.773] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/qaziamaan/.vscode/extensions/vincaslt.highlight-matching-tag-0.9.9/out/src/extension
+[2020-06-08 13:02:54.779] [exthost] [info] ExtensionService#_doActivateExtension Zignd.html-css-class-completion {"startup":true,"extensionId":{"value":"Zignd.html-css-class-completion","_lower":"zignd.html-css-class-completion"},"activationEvent":"*"}
+[2020-06-08 13:02:54.779] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/qaziamaan/.vscode/extensions/zignd.html-css-class-completion-1.19.0/out/src/extension
+[2020-06-08 13:02:55.005] [exthost] [error] Activating extension jzmstrjp.color-the-tag-name failed due to an error:
+[2020-06-08 13:02:55.011] [exthost] [error] TypeError: Cannot read property 'document' of undefined
+    at decorate (/home/qaziamaan/.vscode/extensions/jzmstrjp.color-the-tag-name-0.17.0/extension.js:120:26)
+    at activate (/home/qaziamaan/.vscode/extensions/jzmstrjp.color-the-tag-name-0.17.0/extension.js:116:5)
+    at Function._callActivateOptional (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:788:244)
+    at Function._callActivate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:787:909)
+    at /usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:786:960
+    at async Promise.all (index 9)
+[2020-06-08 13:02:55.272] [exthost] [info] eager extensions activated
+[2020-06-08 13:02:59.626] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/var/www/html/admin/admin-panel-items' is in submodule 'admin'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2020-06-08 13:02:59.626] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/var/www/html/admin/admin-panel-items' is in submodule 'admin'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2020-06-08 13:02:59.626] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/var/www/html/admin/admin-panel-items' is in submodule 'admin'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2020-06-08 13:02:59.626] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/var/www/html/admin/admin-panel-items' is in submodule 'admin'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2020-06-08 13:02:59.626] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/var/www/html/admin/admin-panel-items' is in submodule 'admin'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2020-06-08 13:02:59.626] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/var/www/html/admin/admin-panel-items' is in submodule 'admin'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2020-06-08 13:02:59.626] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/var/www/html/admin/admin-panel-items' is in submodule 'admin'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2020-06-08 13:02:59.626] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/var/www/html/admin/admin-panel-items' is in submodule 'admin'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2020-06-08 13:02:59.626] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/var/www/html/admin/admin-panel-items' is in submodule 'admin'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2020-06-08 13:02:59.626] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/var/www/html/admin/admin-panel-items' is in submodule 'admin'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2020-06-08 13:02:59.626] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/var/www/html/admin/admin-panel-items' is in submodule 'admin'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2020-06-08 13:02:59.626] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/var/www/html/admin/admin-panel-items' is in submodule 'admin'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2020-06-08 13:02:59.626] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/var/www/html/admin/admin-panel-items' is in submodule 'admin'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2020-06-08 13:02:59.626] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/var/www/html/admin/admin-panel-items' is in submodule 'admin'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2020-06-08 13:02:59.626] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/var/www/html/admin/admin-panel-items' is in submodule 'admin'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2020-06-08 13:03:10.735] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"extensionId":{"value":"vscode.configuration-editing","_lower":"vscode.configuration-editing"},"activationEvent":"onLanguage:jsonc"}
+[2020-06-08 13:03:10.735] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/configuration-editing/dist/extension
+[2020-06-08 13:03:10.790] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"extensionId":{"value":"vscode.json-language-features","_lower":"vscode.json-language-features"},"activationEvent":"onLanguage:jsonc"}
+[2020-06-08 13:03:10.790] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/json-language-features/client/dist/jsonMain
+[2020-06-08 13:03:10.878] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"extensionId":{"value":"vscode.typescript-language-features","_lower":"vscode.typescript-language-features"},"activationEvent":"onLanguage:jsonc"}
+[2020-06-08 13:03:10.879] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/typescript-language-features/dist/extension
