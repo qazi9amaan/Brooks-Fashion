@@ -1,4 +1,3 @@
-
     
     <footer>
         <div class="container">
@@ -69,6 +68,7 @@
                                 <div class="col  ">
                                 <p>Not yet registered? <a href="/associates/register.php">Register here</a></p>
                                 </div>
+                        
                             <?php } ?>
                             </div>
                         </form>
@@ -94,14 +94,22 @@
                 </div>
             </div>
         </div>
-    </footer>
-
+</footer>
+	
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
     <script src="/js/custom.js"></script>
+	<script>
 
-    </div>
+$(document).ready(function() {
+
+$("#loading-bar").delay(1000).fadeOut("slow");
+
+})
+	</script>
+
+
 </body>
 
 </html>
