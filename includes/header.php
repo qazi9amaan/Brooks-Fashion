@@ -50,6 +50,10 @@ session_start();
                             <li class="navbar-item">
                                 <a href="/faq.php" class="nav-link">FAQ</a>
                             </li>
+                            <li class="navbar-item">
+                                 <a href="/associates/" class="nav-link">Affiliates</a>
+                            </li>
+                           
                             
                             <li class="navbar-item">
                                 <?php if(isset($_SESSION['public_user_id'])){?>
