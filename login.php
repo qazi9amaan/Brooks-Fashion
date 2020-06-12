@@ -36,7 +36,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === TRUE)
 
             <h1>Login</h1>
 
-            <p>a</p>
+            <p>Welcome back to the family, login ahead.</p>
             <div class="form">
                 <form method="POST" action="includes/auth/user_authenticate.php">
                     <div class="row">

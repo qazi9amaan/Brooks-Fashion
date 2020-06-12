@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     <section class="static about-sec">
         <div class="container">
             <h1>My Account / REgister</h1>
-            <p>a </p>
+            <p>We are just more then happy to see you here. </p>
             <div class="form">
             <?php if (isset($_GET['failure'])): ?>
 				<div class="alert alert-danger alert-dismissable">

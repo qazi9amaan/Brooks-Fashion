@@ -24,7 +24,7 @@
             </div>
             <nav class="main-nav float-right d-none d-lg-block">
                 <ul>
-                    <li ><a href="/index.php">Bookstore</a></li>
+                    <li ><a href="/index.php">Brook's Fashion</a></li>
                     <li class="active"><a href="#intro">Home</a></li>
                     <li><a href="register.php">Register</a></li>
                     <li><a href="login.php">Login</a></li>

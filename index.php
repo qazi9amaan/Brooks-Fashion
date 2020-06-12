@@ -15,18 +15,33 @@
     $total_pages = $db->totalPages;
 
 ?>
+<style>
 
+#owl-demo .item img {
+    height: 731.383px;
+    object-fit: cover;
+}
+@media screen and (max-width: 600px) {
+    #owl-demo .item img {
+    height: 271.283px;
+    object-fit: cover;
+}
+}
+</style>
     <!-- HEADER -->
-    <section class="slider">
+<section class="slider">
+
         <div class="container">
+
             <div id="owl-demo" class="owl-carousel owl-theme">
+                
                 <div class="item">
                     <div class="slide">
-                        <img src="images/slide1.jpg" alt="slide1">
+                        <img src="images/main/1.jpeg" alt="slide1">
                         <div class="content">
                             <div class="title">
-                                <h3>welcome to bookstore</h3>
-                                <h5>Discover the best  online with us</h5>
+                                <h3>welcome to brooks</h3>
+                                <h5>Discover the best fashion online with us</h5>
                                 <a href="shop.php" class="btn">shop Now</a>
                             </div>
                         </div>
@@ -34,23 +49,37 @@
                 </div>
                 <div class="item">
                     <div class="slide">
-                        <img src="images/slide4.jpg" alt="slide1">
+                        <img src="images/slide1.jpg" alt="slide1">
                         <div class="content">
                             <div class="title">
-                                <h3>Become an Ecom Affiliate</h3>
+                            <h3>Become an Ecom Affiliate</h3>
                                 <h5>Start Selling your products now</h5>
                                 <a href="/associates/" class="btn">Become an Affiliate</a>
                             </div>
                         </div>
                     </div>
                 </div>
+                
                 <div class="item">
                     <div class="slide">
-                        <img src="images/slide2.jpg" alt="slide1">
+                        <img src="images/main/4.jpeg" alt="slide1">
                         <div class="content">
                             <div class="title">
-                                <h3>welcome to bookstore</h3>
-                                <h5>Discover the best  online with us</h5>
+                                <h3>Discover THE BEST</h3>
+                                
+                                <h5>You can get anything you want <br> in life if you dress for it..</h5>
+                                <a href="shop.php" class="btn">shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="slide">
+                        <img src="images/main/3.jpeg" alt="slide1">
+                        <div class="content">
+                            <div class="title">
+                            <h3>Brooks Fashion</h3>
+                                <h5>Life is too short to wear boring clothes</h5>
                                 <a href="shop.php" class="btn">shop Now</a>
                             </div>
                         </div>
@@ -61,21 +90,24 @@
                         <img src="images/slide3.jpg" alt="slide1">
                         <div class="content">
                             <div class="title">
-                                <h3>welcome to bookstore</h3>
-                                <h5>Discover the best books online with us</h5>
+                                <h3>"Style is the simple thing of <br> saying complicated things"</h3>
+                                <h5>Jean Cocteau</h5>
+
                                 <a href="shop.php" class="btn">shop Now</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
+            </div>
+
+        </div>
+
+    </section>
     <section class="recomended-sec">
         <div class="container">
             <div class="title">
-                <h2>highly recommendes books</h2>
+                <h2>highly recommendes </h2>
                 <hr>
             </div>
             <div class="row">
@@ -116,12 +148,13 @@
             <figure style="background:url(./images/about-img.jpg)no-repeat;"></figure>
         </div>
         <div class="about-content">
-            <h2>About bookstore,</h2>
-            <p>hello</p>
-            <p>bte</p>
+            <h2>About brooks,</h2>
+            <p class="text-justify">Brooks is a one stop shop for all your fashion and lifestyle needs. Being one of the largest e-commerce store for fashion and lifestyle products, Myntra aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal.</p>
+            <p class="text-justify"> The brand is making a conscious effort to bring the power of 
+            fashion to shoppers with an array of the latest and trendiest products available in the country.</p>
             <div class="btn-sec">
-                <a href="shop.php" class="btn yellow">shop books</a>
-                <a href="login.php" class="btn black">subscriptions</a>
+                <a href="shop.php" class="btn yellow">shop now</a>
+                <a href="/associates" class="btn black">Become a Seller</a>
             </div>
         </div>
     </section>

@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 
        // File upload configuration 
-    $targetDir = BASE_PATH."/uploads/"; 
+    $targetDir = BASE_PATH."/var/www/html/admin/uploads/"; 
     $allowTypes = array('jpg','png','jpeg','gif'); 
      
     $statusMsg = $errorMsg = $insertValuesSQL = $errorUpload = $errorUploadType = ''; 

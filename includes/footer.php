@@ -1,4 +1,3 @@
-
     
     <footer>
         <div class="container">
@@ -6,9 +5,9 @@
                 <div class="col-md-4">
                     <div class="address">
                         <h4>Our Address</h4>
-                        <h6>The BookStore, PES University </h6>
+                        <h6>The Brook's Fashion, Kashmir </h6>
                         <h6>Call : 000 000 000</h6>
-                        <h6>Email : info@bookstore.com</h6>
+                        <h6>Email : info@brooksfashion.com</h6>
                     </div>
 
                 </div>
@@ -69,6 +68,7 @@
                                 <div class="col  ">
                                 <p>Not yet registered? <a href="/associates/register.php">Register here</a></p>
                                 </div>
+                        
                             <?php } ?>
                             </div>
                         </form>
@@ -80,7 +80,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h5>(C) 2020. All Rights Reserved. BookStore W</h5>
+                        <h5>(C) 2020. All Rights Reserved. Brook's Fashion</h5>
                     </div>
                     <div class="col-md-6">
                         <div class="share align-middle">
@@ -94,14 +94,22 @@
                 </div>
             </div>
         </div>
-    </footer>
-
+</footer>
+	
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
     <script src="/js/custom.js"></script>
+	<script>
 
-    </div>
+$(document).ready(function() {
+
+$("#loading-bar").delay(1000).fadeOut("slow");
+
+})
+	</script>
+
+
 </body>
 
 </html>

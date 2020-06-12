@@ -14,7 +14,7 @@ if (isset($_SESSION['associate_logged_in']) && $_SESSION['associate_logged_in'] 
 </div>
 <div class="intro-info">
 <h2>Become your <br>own boss..</h2>
-<h2>Become a <br>Bookstore affiliate</h2>
+<h2>Become a <br>Brook's affiliate</h2>
 
 <div>
 <a href="login.php" class="btn-get-started scrollto">Login to your account</a>
