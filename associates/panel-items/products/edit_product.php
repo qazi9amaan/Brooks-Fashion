@@ -84,11 +84,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 if ($edit)
 {
     $db->where('id', $customer_id);
-    // Get data to pre-populate the form.
-    $product = $db->getOne('associate_products');
+    $product_main = $db->getOne('associate_products');
 }
+	
+
 ?>
+
 <?php include PARENT.'/associates/includes/header-nav.php'; ?>
+ 
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
@@ -96,9 +99,11 @@ if ($edit)
         </div>
     </div>
     <!-- Flash messages -->
-    <?php include BASE_PATH.'/includes/flash_messages.php'; ?>
+ 
     <form class="form" action="" method="post" id="product_form" enctype="multipart/form-data">
+   		<?php $product =$product_main;?>
         <?php include PARENT.'/associates/forms/product_form.php'; ?>
+    
     </form>
 </div>
 <?php include PARENT.'/associates/includes/footer.php'; ?>

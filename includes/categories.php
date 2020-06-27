@@ -32,13 +32,13 @@
                         <h4>Accessories</h4>
                         <ul>
                             <li><a href="getallproducts.php?cat=Watches">Watches</a></li>
-                            <li><a href="getallproducts.php?cat=Shoesn">Shoes</a></li>
+                            <li><a href="getallproducts.php?cat=Shoes">Shoes</a></li>
                             <li><a href="getallproducts.php?cat=Handbags">Bags , Handbags</a></li>
 
                         </ul>
                     </div>
                     <div class="navigation">
-                        <h4>Cosmotics</h4>
+                        <h4>Cosmetics</h4>
                         <ul>
                             <li><a href="getallproducts.php?cat=Bridal-Makeup">Bridal Makeup</a></li>
 

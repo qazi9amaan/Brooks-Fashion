@@ -9,10 +9,10 @@
 <section class="static about-sec">
     <div class="container">
         <h1>Contact Us</h1>
-        <h3>a</h3>
-        <p>b</p>
-        <h3>c </h3>
-        <p>d </p>
+        <h3>khalid colony soura,Srinagar kashmir</h3>
+        <p>7006276749</p>
+        <h3>We are available 24/7</h3>
+        <p></p>
     </div>
 </section>
 <?php include 'includes/footer.php' ?>

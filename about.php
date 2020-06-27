@@ -1,4 +1,3 @@
-
     <?php include 'includes/header.php' ?>
 
 
@@ -12,8 +11,8 @@
         <div class="container">
             <h1>About Us</h1>
             <div class="img-sec">
-                <img class="" src="/images/main/1.jpeg" alt="about">
-                <p class="text-justify"><strong>Brooks</strong> is a one stop shop for all your fashion and lifestyle needs. Being one of the largest e-commerce store for fashion and lifestyle products, Myntra aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal.</p>
+                <img class="" src="/images/main/5.jpeg" alt="about">
+                <p class="text-justify"><strong>Brooks</strong> is a one stop shop for all your fashion and lifestyle needs. Being one of the largest e-commerce store for fashion and lifestyle products, Brook aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal.</p>
                 <p class="text-justify"> The brand is making a conscious effort to bring the power of fashion to shoppers with an array of the latest and trendiest products available in the country.</p>
                 <p class="text-justify"><strong>Brooks</strong> understands its shoppers' needs and caters to them with choice of 
             apparel, accessories, cosmetics and footwear 

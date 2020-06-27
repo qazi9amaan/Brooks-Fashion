@@ -7,10 +7,15 @@ session_start();
 
 <head>
     <meta charset="UTF-8">
-    <title>Book Store</title>
+    <title>Brook's Fashion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#03a6f3">
+	
+	<meta name="description" content="Brooks Fashion deals in all kind of branded products.This is also the best platform to boost your online business">
+	<meta name="keywords" content="online store,online business,ecom,ecommerce website,
+shopping cart,e business,what is ecommerce,ecomerce,Fashion,Kashmir ecom,Brooks,Affiliates,affiliate marketing,online money,how to, free shopping,branded clothes, clothing,earning,earning">
 
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="PUBLIC">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -106,3 +111,12 @@ session_start();
             </div>
         </div>
     </header>
+
+	<script>
+
+$(document).ready(function() {
+
+$("#loading-bar").delay(1000).fadeOut("slow");
+
+})
+	</script>

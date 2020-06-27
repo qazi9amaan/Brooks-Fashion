@@ -37,7 +37,8 @@
                 
                 <div class="item">
                     <div class="slide">
-                        <img src="images/main/1.jpeg" alt="slide1">
+                                                <img src="images/slide1.jpg" alt="slide1">
+
                         <div class="content">
                             <div class="title">
                                 <h3>welcome to brooks</h3>
@@ -49,7 +50,7 @@
                 </div>
                 <div class="item">
                     <div class="slide">
-                        <img src="images/slide1.jpg" alt="slide1">
+                    <img src="images/main/1.jpeg" alt="slide1">
                         <div class="content">
                             <div class="title">
                             <h3>Become an Ecom Affiliate</h3>
@@ -145,11 +146,11 @@
 
     <section class="about-sec">
         <div class="about-img">
-            <figure style="background:url(./images/about-img.jpg)no-repeat;"></figure>
+            <figure style="background:url(./images/main/5.jpeg)no-repeat;"></figure>
         </div>
         <div class="about-content">
             <h2>About brooks,</h2>
-            <p class="text-justify">Brooks is a one stop shop for all your fashion and lifestyle needs. Being one of the largest e-commerce store for fashion and lifestyle products, Myntra aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal.</p>
+            <p class="text-justify">Brooks is a one stop shop for all your fashion and lifestyle needs. Being one of the largest e-commerce store for fashion and lifestyle products, Brooks aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal.</p>
             <p class="text-justify"> The brand is making a conscious effort to bring the power of 
             fashion to shoppers with an array of the latest and trendiest products available in the country.</p>
             <div class="btn-sec">
@@ -170,9 +171,9 @@
                 </li>
                 <li>
                     <span class="icon return"><i class="fa fa-reply-all" aria-hidden="true"></i></span>
-                    <h3>30- DAY RETURN</h3>
-                    <h5>Moneyback guarantee</h5>
-                    <h6>If you want to return the book we are here for you</h6>
+                    <h3>6 Days Delivery</h3>
+                    <h5>Faster Delivery</h5>
+                    <h6>Within 6 days you will receive your product</h6>
                 </li>
                 <li>
                     <span class="icon chat"><i class="fa fa-comments" aria-hidden="true"></i></span>
@@ -188,34 +189,32 @@
         <div class="container">
             <div id="testimonal" class="owl-carousel owl-theme">
                 <div class="item">
-                    <h3>I can never read all the books I want; I can never be all the people I want and live all the lives I want. I can never train myself in all the skills I want. And why do I want? I want to live and feel all the shades, tones and variations
-                        of mental and physical experience possible in my life. And I am horribly limited.</h3>
+                    <h3>I got my Gshock watch and i love it.The design is to die for.Cannot wait for the bag,i am dealing with Brooks Fashion since 2017.Best of luck for your website</h3>
                     <div class="box-user">
-                        <h4 class="author">Sylvia Plath</h4>
-                        <span class="country">The Unabridged Journals of Sylvia Plath</span>
+                        <h4 class="author">Faiq</h4>
+                        <span class="country">Engineer</span>
                     </div>
                 </div>
                 <div class="item">
-                    <h3>What really knocks me out is a book that, when you're all done reading it, you wish the author that wrote it was a terrific friend of yours and you could call him up on the phone whenever you felt like it. That doesn't happen much,
-                        though
+                    <h3>Thankyou so much to Brooks Fashion for making our wedding party absolutely amazing!
                     </h3>
                     <div class="box-user">
-                        <h4 class="author">J.D. Salinger</h4>
-                        <span class="country">The Catcher in the Rye</span>
+                        <h4 class="author">Anand </h4>
+                        <span class="country">Developer</span>
                     </div>
                 </div>
                 <div class="item">
-                    <h3>Sometimes, you read a book and it fills you with this weird evangelical zeal, and you become convinced that the shattered world will never be put back together unless and until all living humans read the book.</h3>
+                    <h3>Your products are awesome,cheaper then anyother and most important,you are trustworthy.From whatsapp shopping ,you gave us awesome platform.Thankyou Mr.Owais yaqoob</h3>
                     <div class="box-user">
-                        <h4 class="author">John Green</h4>
-                        <span class="country"> The Fault in Our Stars</span>
+                        <h4 class="author">Shadab</h4>
+                        <span class="country"> Singer</span>
                     </div>
                 </div>
                 <div class="item">
-                    <h3>Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten</h3>
+                    <h3>This is great platfrom for resellers like me,Thankyou so much for your support.</h3>
                     <div class="box-user">
-                        <h4 class="author">Neil Gaiman</h4>
-                        <span class="country">Coraline</span>
+                        <h4 class="author">Rihana</h4>
+                        <span class="country">Modest Budget</span>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,3 @@
-
 <footer id="footer">
     <div class="footer-top">
         <div class="container">
@@ -33,7 +32,7 @@
     </div>
     <div class="container">
         <div class="credits mt-3">
-        Developed by <a href="#">BOOKSTORE</a><br>
+        Developed by <a href="#">Brooks Fashion</a><br>
         </div>
     </div>
 </footer>

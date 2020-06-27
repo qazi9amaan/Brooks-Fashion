@@ -126,6 +126,9 @@ $numNotifications=$numActivities+$numOrders;
                     <!-- /.navbar-static-side -->
                     
                 </nav>
+        
+        		
+        
             <?php endif; ?>
             <?php include "notification_drawer.php" ?>
 

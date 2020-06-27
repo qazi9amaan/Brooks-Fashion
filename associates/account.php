@@ -39,6 +39,31 @@ include_once('includes/header-nav.php');
         <!-- /.col-lg-12 -->
     </div>
     <?php include BASE_PATH.'/includes/flash_messages.php'; ?>
+	
+
+			 <div class="row ">
+  
+       <div class="col-md-12">
+       <div class="panel panel-chart-red">
+           <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-12 text-left">
+                        <span>Disclaimer</span>
+                        <p class="text-justify" >
+                        	<strong> Dear associate, </strong> we are happy to see you here. Please understand that our team is still trying to make it an easeless experience for you, please be patient! Dont hesitate to contact us directly if you fall into an error.
+                        	We are here for you! <br>
+                        <a href="https://chat.whatsapp.com/EQ176kEExOiIe8ETYsbhkk" class="btn btn-success btn-sm " style="margin-top:5px" > <i class="fa fa-whatsapp" > </i> Help center</a>
+                        </p>
+                        </div>
+                    </div>
+                </div>
+           </div>
+       </div>
+       
+        <!-- /.col-lg-12 -->
+    </div>
+
+
 
     <div class="row ">
        <div class=" col-md-8 ">
@@ -241,6 +266,28 @@ include_once('includes/header-nav.php');
         </div>
     </div>
     <!-- /.row -->
+
+ <div class="row ">
+  
+       <div class="col-md-12">
+       <div class="panel panel-chart-white">
+           <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-12 text-left">
+                        <span>Contribute to brooks</span>
+                        <p class="text-justify" >
+                        	<strong> Dear associate, </strong> we are happy to serve you here. We are enhancing our service. You can contribute to us anytime for the better experience.
+                         <br>
+                        <a href="https://rzp.io/l/brooks-fashion" class="btn btn-primary btn-sm " style="margin-top:5px" > <i class="fa fa-heart" > </i> Contribute</a>
+                        </p>
+                        </div>
+                    </div>
+                </div>
+           </div>
+       </div>
+       
+        <!-- /.col-lg-12 -->
+    </div>
 </div>
 <!-- /#page-wrapper -->
 

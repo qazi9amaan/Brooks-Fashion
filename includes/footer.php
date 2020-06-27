@@ -6,8 +6,8 @@
                     <div class="address">
                         <h4>Our Address</h4>
                         <h6>The Brook's Fashion, Kashmir </h6>
-                        <h6>Call : 000 000 000</h6>
-                        <h6>Email : info@brooksfashion.com</h6>
+                        <h6>Call : 7006276749</h6>
+                        <h6>Email : bman18626@gmail.com</h6>
                     </div>
 
                 </div>

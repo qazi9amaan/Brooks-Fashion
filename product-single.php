@@ -11,6 +11,22 @@ $db->where('id', $product_id);
 $product = $db->getOne('products');
 ?>
 
+<?php
+$images = explode(",",$product['file_name']);
+$first_img = $images[0];
+$first_imgURL = 'admin/uploads/'.$first_img
+?>
+<meta name="title" content="<?php echo $product['product_name']?>">
+<meta name="description" content="<?php echo $product['product_desc']?>">
+
+<meta property="og:type" content="fashion-website">
+<meta property="og:url" content="https://brooksfashion.ml/">
+<meta property="og:title" content="<?php echo $product['product_name']?>">
+<meta property="og:description" content="<?php echo $product['product_desc']?>">
+<meta property="og:image" content="https://brooksfashion.ml/<?php echo  $first_imgURL;  ?>">
+
+
+
 
 <?php include 'includes/header.php' ?>
 
@@ -264,6 +280,14 @@ $total_pages = $db->totalPages;
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
+	<script>
+
+$(document).ready(function() {
+
+$("#loading-bar").delay(1000).fadeOut("slow");
+
+})
+	</script>
 
 </body>
 

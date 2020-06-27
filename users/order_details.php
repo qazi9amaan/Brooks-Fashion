@@ -1,6 +1,5 @@
-
 <?php
-$key = 'rzp_test_y5XqLUw3T4vBKU';
+$key = 'rzp_live_twsRWGaSxkUdjI';
 session_start();
 require_once '/var/www/html/admin/config/config.php';
 
@@ -196,7 +195,9 @@ $order = $db->getOne("orders");
                             $color='#dc3545';
                         }else if($order['order_status']=='accepted'){
                             $color='#28a745';
-                        }if($order['order_status'] =='delivering')
+                        }
+                    
+                    if($order['order_status'] =='delivering')
                         {
                             $color='#28a745';
                             $order['order_status_reason'] =
@@ -211,7 +212,11 @@ $order = $db->getOne("orders");
                             <p> Reference : '. $order['delivery_tracking_number'].'</p>
                             ';
 
-                        }else{
+                        
+                    }else if($order['order_status']=='rejected'){
+                     $order['order_status_reason']= $order['order_status_reason'];
+                    }
+                    else{
                             $color='#28a745';
                             $order['order_status_reason']='Your order has successfully been placed!';
                         }
@@ -222,6 +227,9 @@ $order = $db->getOne("orders");
                     
                     </h3>
                     </div>
+                </div>
+                <div class="card-footer text-center">
+                    You can anytime get back to us for any kind of assisitance, your order id <strong> OR-<span><?php echo $order['order_id'];?></span> </strong>
                 </div>
                </div>
               </div>
@@ -410,7 +418,7 @@ var options = {
     "currency": "INR",
     "name": "<?php echo $order['product_name'] ?>",
     "description": "You're are subjected to pay an amount of",
-    "image": "/images/logoo.png",
+    "image": "/images/logo.jpeg",
     "handler": function (response){
        update_the_payment(response.razorpay_payment_id);
     },

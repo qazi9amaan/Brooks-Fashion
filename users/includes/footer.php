@@ -1,15 +1,13 @@
-            
-</div>
-    </div>
-
-    <footer class="border-top" style="background:#fafafa;">
+    
+    <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
                     <div class="address">
                         <h4>Our Address</h4>
-                        <h6 class="mb-1">The BookStore, PES University </h6>
-                        <h6 class="mt-0">Email : info@bookstore.com</h6>
+                        <h6>The Brook's Fashion, Kashmir </h6>
+                        <h6>Call : 7006276749</h6>
+                        <h6>Email : bman18626@gmail.com</h6>
                     </div>
 
                 </div>
@@ -35,9 +33,28 @@
                 <div class="col-md-5">
                     <div class="form">
                         <h3>Ecommerce Associates </h3>
-                        <h6 class="text-justify">We are now offering an associate based ecommercing, if you want to sell your products nation-wide, please visit </h6>
+                        <h6 class="text-justify">We are now offering an associate based ecommercing, if you want to sell your products nation-wide, please visit <a href="/associates/"> associate panel</a></h6>
+                      
+
+                        
                         <form  method="post" action="/associates/includes/authenticate.php">
                             <div class="row">
+                            <?php
+                            if (isset($_SESSION['associate_logged_in'])) {
+                            ?>
+                            <div class="col-md-12">
+                                <p class="lead">
+                                    We are happy to see that you're an associate, visit your account
+                                </p>
+                            </div>
+                            <div class="col-md-5">
+                                <a href ="/associates/" class="btn black">My Account</a>
+                            </div>
+                            <div class="col  ">
+                            <a href ="/associates/logout.php" class="btn black">Logout</a>
+                            </div>
+                                </div>
+                            <?php }else{ ?>
                                 <div class="col-md-12">
                                     <input placeholder="Email" type ="email" name="email" required>
                                 </div>
@@ -49,8 +66,10 @@
                                     <button class="btn black">Alright, Login</button>
                                 </div>
                                 <div class="col  ">
-                                <h5>Not yet registered? <a style="color:#5d5d5d;text-decoration:none;" href="/associates/register.php">Register here</a></h5>
+                                <p>Not yet registered? <a href="/associates/register.php">Register here</a></p>
                                 </div>
+                        
+                            <?php } ?>
                             </div>
                         </form>
                     </div>
@@ -61,7 +80,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h5>(C) 2020. All Rights Reserved. BookStore W</h5>
+                        <h5>(C) 2020. All Rights Reserved. Brook's Fashion</h5>
                     </div>
                     <div class="col-md-6">
                         <div class="share align-middle">
@@ -75,36 +94,22 @@
                 </div>
             </div>
         </div>
-    </footer>
-    </main>
+</footer>
+	
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
     <script src="/js/custom.js"></script>
+	<script>
 
-    <script>
-    function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    }
+$(document).ready(function() {
 
-    function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-    }
-    </script>
-    <script>
-     $('#open-sidenav-user').click(function(){
-            if($(this).attr('data-state')=='close')
-            {
-                $(this).attr('data-state','open');
-                $(this).attr('onclick','closeNav()');
-            }else{
-                $(this).attr('data-state','close');
-                $(this).attr('onclick','openNav()');
-            }
-        })
-    </script>
+$("#loading-bar").delay(1000).fadeOut("slow");
+
+})
+	</script>
+
+
 </body>
 
 </html>

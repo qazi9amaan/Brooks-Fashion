@@ -1,8 +1,8 @@
+<?php 
 
-<?php include '../includes/header.php' ?>
-
-<?php
+include '../includes/header.php' ;
 require_once  '../admin/config/config.php';
+
 $product_id = $_GET['id'];
 $db_products = getDbInstance();
 $db_products->where('id', $product_id);
@@ -13,7 +13,6 @@ $first_img = $images[0];
 $first_imgURL = '/admin/uploads/'.$first_img;
 
 $db = getDbInstance();
-// $user_id = $_SESSION['public_user_id'];
 
 $user_id = $_SESSION['public_user_id'];
 $db->where('user', $user_id);
@@ -24,24 +23,7 @@ if($account == null)
     header('location: /users/account-setup.php?reg_id='.$_SESSION['public_user_id'].'&operation=create&q=users/checkout.php?id='.$product_id);
     exit;
 }
-if ($_SERVER['REQUEST_METHOD'] == 'POST')
-{
-	$data_to_db = filter_input_array(INPUT_POST);
-	
-    $data_to_db['product_id'] = $product_id;
-    $data_to_db['owner'] =$product['product_owner'] ;
-    $data_to_db['user_id'] = $user_id;
-    $data_to_db['payment_type'] = 'not-yet';
-    $data_to_db['ordered_at'] = date('Y-m-d H:i:s');
-	$db = getDbInstance();
-	$last_id = $db->insert('orders', $data_to_db);
-	if ($last_id)
-	{
-		$_SESSION['success'] = 'Your  order is successfully submitted!';
-		header('location: index.php');
-		exit;
-	}
-}
+
 
 
 ?>
@@ -129,11 +111,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 
                     </ul>
                     <div class="text-right mt-4 mr-4">
-                    <form action="#" method="POST">
+                    <form action="buy-product.php" method="POST">
 
                     <a href="/product-single.php?id=<?php echo $product['id'] ?>" class="btn black">Cancel </a>
                     <input type="text" hidden name="amount" id="upload_f_price" >
-                    <button type="submit" class="btn ">Proceed</button>
+                    <input type="text" hidden name="product_id" value="<?php echo  $product_id ;?>"  >
+                    <input type="text" hidden name="owner" value="<?php echo  $product['product_owner']  ;?>"  >
+                    <input type="text" hidden name="user_id" value="<?php echo  $user_id ;?>"  >
+
+                    
+                    <input type="submit" class="btn " value="Proceed" >
                     </form>
                     </div>
                 </div>

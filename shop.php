@@ -52,7 +52,7 @@ require_once  'admin/lib/Products/Products.php';
                         <h4>Accessories</h4>
                         <ul>
                             <li><a href="getallproducts.php?cat=Watches">Watches</a></li>
-                            <li><a href="getallproducts.php?cat=Shoesn">Shoes</a></li>
+                            <li><a href="getallproducts.php?cat=Shoes">Shoes</a></li>
                             <li><a href="getallproducts.php?cat=Handbags">Bags , Handbags</a></li>
 
                         </ul>
@@ -215,6 +215,15 @@ require_once  'admin/lib/Products/Products.php';
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
+	<script>
+
+$(document).ready(function() {
+
+$("#loading-bar").delay(1000).fadeOut("slow");
+
+})
+	</script>
+
 </body>
 
 </html>

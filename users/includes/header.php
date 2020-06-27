@@ -67,7 +67,7 @@
                         <li class="nav-item"> <a class="nav-link" href="/faq.php">FAQ</a> </li>
 
                     </ul>
-                    <p class="d-none d-md-block lead mb-0 text-dark"> </i> <b> BOOKSTORE</b> </p>
+                    <p class="d-none d-md-block lead mb-0 text-dark"> </i> <b> BROOKS FASHION</b> </p>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-1"> <a class="nav-link" href="#"> <i class="fa fa-shopping-cart fa-fw fa-lg"></i> </a> </li>
                         <li class="nav-item mx-1"> <a class="nav-link" href="/users/edit-account.php?operation=edit"> <i class="fa fa-user-circle-o fa-fw fa-lg"></i> </a> </li>

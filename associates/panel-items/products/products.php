@@ -99,19 +99,20 @@ $total_pages = $db->totalPages;
     </div>
     <hr>
     <!-- //Filters -->
-
+	
     <!-- Table -->
+<div class="table-responsive">
     <table class="table table-striped table-bordered table-condensed">
         <thead>
+                <th>ID</th>
+                <th>Product Name</th>
+                <th>Product Description</th>
+                <th> Category</th>
+                <th> Price</th>
+                <th> Quality</th>
+                <th>Status</th>
+                <th>Actions</th>
             <tr>
-                <th width="5%">ID</th>
-                <th width="20%">Product Name</th>
-                <th width="35%">Product Description</th>
-                <th width="8%"> Category</th>
-                <th width="5%"> Price</th>
-                <th width="9%"> Quality</th>
-                <th width="8%">Status</th>
-                <th width="10%">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -143,7 +144,7 @@ $total_pages = $db->totalPages;
             <!-- Delete Confirmation Modal -->
             <div class="modal fade" id="confirm-delete-<?php echo $row['id']; ?>" role="dialog">
                 <div class="modal-dialog">
-                    <form action="/admin/admin-panel-items/Products/delete_product.php" method="POST">
+                    <form action="delete_product.php" method="POST">
                         <!-- Modal content -->
                         <div class="modal-content">
                             <div class="modal-header">
@@ -189,6 +190,7 @@ $total_pages = $db->totalPages;
             <?php endforeach; ?>
         </tbody>
     </table>
+</div>
     <!-- //Table -->
 
     <!-- Pagination -->

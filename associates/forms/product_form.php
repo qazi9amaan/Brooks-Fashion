@@ -52,14 +52,21 @@
     </div>
 
   
-    <?php include BASE_PATH.'/includes/image_upload.php'; ?>
+    <?php if($edit && $product['file_name'] == 'null'){
+            echo '<a  class="btn btn-success btn-lg" href="helper/?id='.$product['id'].'&name='.$product['product_name'].'">Add Images To Product</a>';
+    }else{
+    if($edit)
+    {
+    include BASE_PATH.'/includes/image_upload.php';    
+    }
+}?>
 
     <?php if( !isset($_GET['operation']) ||  $_GET['operation'] !='view')
     {
           ?>
     <div class="form-group text-center">
         <label></label>
-        <button type="submit" class="btn btn-success" >Upload </button>
+        <button id="upload_btn_product" type="submit" class="btn btn-success" >Upload </button>
     </div>
     <?php }
     ?>

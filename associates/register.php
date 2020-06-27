@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	if ($last_id)
 	{
 		$_SESSION['success'] = 'Your Associate Account is successfully created!';
-		header('location: login.php');
+		header('location: index.php');
 		exit;
 	}
 }
@@ -137,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 </div>
                 <div class="form-group  text-center col-md-12  mt-5">
                     <button type="submit" class="btn btn-primary ">Register</button>
-                    <a href="login.php" class="btn btn-outline-primary ">Login to your account</a>
+                    <a href="index.php" class="btn btn-outline-primary ">Login to your account</a>
 
                 </div>
             </form>
