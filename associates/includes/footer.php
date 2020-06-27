@@ -1,11 +1,4 @@
 </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-
-
-    <!-- Bootstrap Core JavaScript -->
-
         <script src="/admin/assets/js/bootstrap.min.js"></script>
         <script src="/admin/assets/js/script.js"></script>
     <!-- Metis Menu Plugin JavaScript -->

@@ -8,76 +8,87 @@ if (isset($_SESSION['associate_logged_in']) && $_SESSION['associate_logged_in'] 
 ?>
 
 
-<!--  -->
-<?php include '../associates/includes/header.php'; ?>
+<?php include 'includes/header.php';?>
 <style>
-    #intro{
-        padding: 150px 0 25px 0;
-
+    .login100-form {
+        width: 560px;
+        min-height: 100vh;
+        display: block;
+        background-color: #f7f7f7;
+        padding: 180px 55px 55px 55px;
     }
 </style>
 
+<body style="background-color: #666666;">
 
-<!-- LOGIN AND TOP  -->
-<section id="intro" class="clearfix">
-</section>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form  method="post" action="includes/authenticate.php" class="login100-form validate-form">
+                    <span class="login100-form-title p-b-43">
+						Login Affiliates
+					</span>
 
 
 
-<main id="main">
-    <!-- REGISTER -->
-    <section id="register">
-        <div class="container">
-            <header class="section-header mt-5">
-                <h3>Start selling today!</h3>
-                <p>Login to your account and sell</p>
-            </header>
-            <form class="form-horizontal" method="post" action="includes/authenticate.php">
-                                <?php if (isset($_SESSION['login_failure'])): ?>
-                                            <div class="alert alert-danger alert-dismissable ">
-                                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                                <?php
-                                                echo $_SESSION['login_failure'];
-                                                unset($_SESSION['login_failure']);
-                                                ?>
-                                            </div>
-                                        <?php endif; ?>
-                                   <div class="px-3">
-                                    <div class="text-center py-4">
-                                    <i style="font-size:8.5rem; color:#00366f"class="fa fa-handshake-o"></i>
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" name="email">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Email</span>
+                    </div>
 
-                                    </div>
-                                   <div class="form-group">
-                                        <label for="email" class="cols-sm-2 control-label">Your email</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group ">
-                                                <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                   
-                                    <div class="form-group">
-                                        <label for="password" class="cols-sm-2 control-label">Password</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group ">
-                                                <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                   
-                                    <div class="form-group text-center pt-3">
-                                        <button type="submit" class="btn btn-blue btn-sm p-2 btn-block rounded login-button">Login</button>
-                                    </div>
-                                        Not yet registered? <a href="register.php">Register now</a>
 
-                                   </div>
-                                </form>
-        </section >
-        <br>
-        <section class="mt-5">
-       
-        </section>
-<?php include '../associates/includes/footer-2.php' ?>
-</main>
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input class="input100" type="password" name="password">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Password</span>
+                    </div>
 
+                    <?php if (isset($_SESSION['login_failure'])): ?>
+                        <span class=" p-t-10 p-b-10 ">
+                        <div class="alert alert-danger alert-dismissable ">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <?php
+                            echo $_SESSION['login_failure'];
+                            unset($_SESSION['login_failure']);
+                            ?>
+                    </div>
+                    </span>
+                    <?php endif; ?>
+
+
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn">
+							Login
+						</button>
+                    </div>
+
+                    <div class="text-center p-t-46 p-b-20">
+                        <span class="txt2">
+							Not yet registered?
+						</span>
+                    </div>
+
+                    <div class="login100-form-social flex-c-m">
+                        <a href="register.php" class="btn btn-secondary ">
+                           Register now
+                        </a>
+
+
+                    </div>
+                </form>
+
+                <div class="login100-more" style="background-image: url('images/2.jpg');">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <?php include 'includes/footer-2.php';?>
+
+</body>
+
+</html>

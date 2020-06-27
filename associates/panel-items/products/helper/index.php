@@ -93,7 +93,7 @@ require_once '/var/www/html/associates/includes/auth_validate.php';
             </div>
                 
                   
-           
+          
     </div>
 </div>
 
@@ -138,7 +138,7 @@ $(document).ready(function(){
 
                     $('#uploadStatus').html('<div class="alert text-center alert-success m-2" role="alert"><p> Files have been uploaded successfully! </p> <a href="../products.php" class="btn btn-success text-center ">Show Product</a> </div> ');
                 }else if(resp == 'err'){
-                    $('#uploadStatus').html('<div class="alert alert-danger m-2" role="alert"> Please select a valid file to upload. </div>');
+                    $('#uploadStatus').html('<div class="alert alert-danger m-2" role="alert"> This file is not supported. Invalid file type or Larger File Size. </div>');
                     $(".progress-bar").width('0%');
 
                 }
@@ -148,7 +148,7 @@ $(document).ready(function(){
 	
     // File type validation
     $("#fileInput").change(function(){
-        var allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.ms-office', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+        var allowedTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
         var file = this.files[0];
         var fileType = file.type;
     
@@ -158,7 +158,7 @@ $(document).ready(function(){
             return false;
         }
         if(!allowedTypes.includes(fileType)){
-            alert('Please select a valid file (PDF/DOC/DOCX/JPEG/JPG/PNG/GIF).');
+            alert('Please select a valid file (JPEG/JPG/PNG/GIF).');
             $("#fileInput").val('');
             return false;
         }else{

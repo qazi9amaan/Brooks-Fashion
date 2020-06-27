@@ -7,9 +7,6 @@ if (isset($_SESSION['associate_logged_in']) && $_SESSION['associate_logged_in'] 
 	header('Location: account.php');
 }
 
-// Users class
-require_once 'lib/AssociateUsers/AssociateUsers.php';
-$Associate = new Associate();
 
 $edit = false;
 
@@ -48,105 +45,98 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 }
 ?>
 
-<!--  -->
-<?php include '../associates/includes/header.php'; ?>
-<style>
-    #intro{
-        padding: 150px 0 20px 0;
+<?php include 'includes/header.php';?>
 
+<style>
+    .login100-form {
+        width: 560px;
+        min-height: 100vh;
+        display: block;
+        background-color: #f7f7f7;
+        padding: 60px 55px 55px 55px;
     }
 </style>
 
+<body style="background-color: #666666;">
 
-<!-- LOGIN AND TOP  -->
-<section id="intro" class="clearfix">
-</section>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form  method="post" action="register.php" class="login100-form validate-form">
+                    <span class="login100-form-title p-b-45">
+						Register Affliate
+					</span>
 
 
 
-<main id="main">
-    <!-- REGISTER -->
-    <section id="register">
-        <div class="container">
-            <header class="section-header mt-5">
-                <h3>Start selling today!</h3>
-                <p>Register now and be a part of us</p>
-            </header>
-            <form class="form-horizontal" method="post" action="register.php">
-                <div class="form-row">
-                <?php include BASE_PATH . '/includes/flash_messages.php'; ?>
-
-                <div class="form-group col-md-6 ">
-                    <label for="name" class="cols-sm-2 control-label">Your Name</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group d-flex align-items-baseline">
-                            <input required type="text" class="form-control " name="name" id="name" placeholder="Enter your Name" />
-                        </div>
+                    <div class="wrap-input100 validate-input" data-validate="Valid name is required">
+                        <input class="input100" type="text" name="name">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Name</span>
                     </div>
-                </div>
-                <div class="form-group col-md-6 ">
-                    <label for="bussiness_name" class="cols-sm-2 control-label">Bussiness Name</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group d-flex align-items-baseline">
-                            
-                            <input required type="text" class="form-control " name="bussiness_name" id="bussiness_name" placeholder="Enter your Bussiness Name" />
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group col-md-12">
-                    <label for="address" class="cols-sm-2 control-label">Bussiness Address</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group d-flex align-items-baseline">
-                            <textarea name="address"class="form-control " placeholder="Enter your Bussiness Address" id="address"  rows="5"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group col-md-6 ">
-                    <label for="email_address" class="cols-sm-2 control-label">Your Email</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group d-flex align-items-baseline">
-                            <input required type="text" class="form-control " name="email_address" id="email_address" placeholder="Enter your Email" />
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group col-md-6 ">
-                    <label for="phone" class="cols-sm-2 control-label">Phone Number</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group d-flex align-items-baseline">
-                            <input required type="number" class="form-control " name="phone" id="phone" placeholder="Enter your Phone Number" />
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group col-md-6 ">
-                    <label for="password" class="cols-sm-2 control-label">Password</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group d-flex align-items-baseline">
-                            <input required type="password" class="form-control " name="password" id="password" placeholder="Enter your Password" />
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group col-md-6 ">
-                    <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group d-flex align-items-baseline">
-                            <input required type="password" class="form-control "  id="confirm" placeholder="Confirm your Password" />
-                        </div>
-                    </div>
-                </div>
 
+                    <div class="wrap-input100 validate-input" data-validate="Valid bussiness name is required">
+                        <input class="input100" type="text" name="bussiness_name">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Bussiness Name</span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required">
+                        <input name="email_address" class="input100" name="email_address" type="email">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Email</span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Valid phone  is required">
+                        <input class="input100" type="phone" name="phone" >
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Phone</span>
+                    </div>
+                    <div class="wrap-input100 validate-input">
+                        <textarea class="input100" type="text"  name="address"></textarea>
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Address</span>
+                    </div>
+
+
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input class="input100" type="password" name="password">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Password</span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input class="input100" type="password" >
+                        <span class="focus-input100"></span>
+                        <span class="label-input100"> Confirm Password</span>
+                    </div>
+
+                    <?php include BASE_PATH . '/includes/flash_messages.php'; ?>
+
+
+                    <div class="container-login100-form-btn">
+                        <button type="submit" class="login100-form-btn">
+							Register
+						</button>
+                    </div>
+
+                    <div class="text-center p-t-46 p-b-20">
+                        <span class="txt2">
+							Already have an account? <a href="index.php">Login now</a>
+						</span>
+                    </div>
+
+                   
+                </form>
+            
+                <div class="login100-more" style="background-image: url('images/7.jpg');">
                 </div>
-                <div class="form-group  text-center col-md-12  mt-5">
-                    <button type="submit" class="btn btn-primary ">Register</button>
-                    <a href="index.php" class="btn btn-outline-primary ">Login to your account</a>
+            </div>
+        </div>
+    </div>
 
-                </div>
-            </form>
-        </section >
-        <br>
-        <section class="mt-5">
-       
-        </section>
 
-</main>
+</body>
+<?php include 'includes/footer-2.php';?>
 
-<?php include '../associates/includes/footer-2.php' ?>
+</html>

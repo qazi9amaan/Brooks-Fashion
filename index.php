@@ -4,7 +4,7 @@
     include 'includes/header.php' ?>
 
 <?php
-    $pagelimit = 4;
+    $pagelimit = 12;
     $page = 1;
     $order_by = 'id';
     $db = getDbInstance();
@@ -43,7 +43,7 @@
                             <div class="title">
                                 <h3>welcome to brooks</h3>
                                 <h5>Discover the best fashion online with us</h5>
-                                <a href="shop.php" class="btn">shop Now</a>
+                                <a href="shop.php" class="btn">MORE</a>
                             </div>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                     $images = explode(",",$row['file_name']);
                     $imageURL = 'admin/uploads/'.$images[0]
                 ?>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 mt-3">
                         <div class="item">
                         <a href="product-single.php?id=<?php echo $row['id']; ?>"><img style="width:135px; height:218px" src="<?php echo $imageURL; ?>" alt="img"></a>
                             <h3 class="text-capitalize "><?php echo $row['product_name']?></h3>

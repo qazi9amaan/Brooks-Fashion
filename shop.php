@@ -110,7 +110,7 @@ require_once  'admin/lib/Products/Products.php';
             $order_dir	= filter_input(INPUT_GET, 'order_dir');
         
         // Per page limit for pagination
-        $pagelimit = 25;
+        $pagelimit = 20;
         
         // Get current pagecostumers
         $page = filter_input(INPUT_GET, 'page');
@@ -184,7 +184,9 @@ require_once  'admin/lib/Products/Products.php';
                     </div>
 
 
-
+					<div class="text-center">
+            <?php echo paginationLinks($page, $total_pages, 'shop.php'); ?>
+            </div>
 
                 </div>
     </section>

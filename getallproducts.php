@@ -36,7 +36,7 @@ $select = array('id', 'product_name', 'product_desc', 'product_category', 'file_
 // Start building query according to input parameters
 // If search string
 if ($category) {
-	$db->where('product_category', '%' . $category . '%', 'like');
+	$db->where('product_category',  $category , 'like');
 }
 // If order direction option selected
 if ($order_dir) {
@@ -117,7 +117,7 @@ $total_pages = $db->totalPages;
             </div>
                 </div>
             <div class="text-center">
-            <?php echo paginationLinks($page, $total_pages, 'getllproducts.php'); ?>
+            <?php echo paginationLinks($page, $total_pages, 'getallproducts.php'); ?>
             </div>
 
             
