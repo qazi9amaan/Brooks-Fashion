@@ -75,11 +75,19 @@ $order = $db->getOne("orders");
         <p class="px-3 pt-0 mt-0 text-justified">
             <b>Disclaimer : </b> Dear user, please go ahead to complete the payment process choose your preffered payment option. Check your delivery address before comfirming the payment. 
         </p>
+        <?php if($order['allow_cod'] != 'on'){?>
+        <p class="px-3 text-dark pt-0 mt-0 text-justified"> 
+            <b>Sorry! COD is not available on this product..</b>
+        </p>
+        <?php }?>
+
       </div>
       <div class="modal-footer">
         
         <button type="button" class="razorpay-payment-button" data-dismiss="modal">Close</button>
+        <?php if($order['allow_cod'] === 'on'){?>
         <button id="cod_button" class="razorpay-payment-button border-0 bg-primary">C.O.D</button>
+        <?php }?>
         <button id="rzp-button1" class="razorpay-payment-button border-0 bg-primary">Pay Now</button>
       </div>
     </div>

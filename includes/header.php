@@ -10,17 +10,31 @@ session_start();
     <title>Brook's Fashion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#03a6f3">
-	
+
+	<?php  if(substr(CURRENT_PAGE,0,18) != 'product-single.php'){ ?>
 	<meta name="description" content="Brooks Fashion deals in all kind of branded products.This is also the best platform to boost your online business">
 	<meta name="keywords" content="online store,online business,ecom,ecommerce website,
 shopping cart,e business,what is ecommerce,ecomerce,Fashion,Kashmir ecom,Brooks,Affiliates,affiliate marketing,online money,how to, free shopping,branded clothes, clothing,earning,earning">
-
+<?php  }else{?>
+<div class="meta" > </div>
+<?php } ?>
 	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="PUBLIC">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171025214-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171025214-2');
+</script>
+
+    
 </head>
 <style>
 .progress-line, .progress-line:before {

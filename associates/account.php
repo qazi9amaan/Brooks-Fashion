@@ -59,7 +59,24 @@ include_once('includes/header-nav.php');
                 </div>
            </div>
        </div>
-       
+  
+  <div class="col-md-12">
+  <div class="panel panel-chart-white">
+      <div class="panel-heading">
+               <div class="row">
+                   <div class="col-xs-12 text-left">
+                   <span>Contribute to brooks</span>
+                   <p class="text-justify" >
+                       <strong> Dear associate, </strong> we are happy to serve you here. We are enhancing our service. You can contribute to us anytime for the better experience.
+                    <br>
+                   <a href="https://rzp.io/l/brooks-fashion" class="btn btn-primary btn-sm " style="margin-top:5px" > <i class="fa fa-heart" > </i> Contribute</a>
+                   </p>
+                   </div>
+               </div>
+           </div>
+      </div>
+  </div>
+  
         <!-- /.col-lg-12 -->
     </div>
 
@@ -267,27 +284,7 @@ include_once('includes/header-nav.php');
     </div>
     <!-- /.row -->
 
- <div class="row ">
-  
-       <div class="col-md-12">
-       <div class="panel panel-chart-white">
-           <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-12 text-left">
-                        <span>Contribute to brooks</span>
-                        <p class="text-justify" >
-                        	<strong> Dear associate, </strong> we are happy to serve you here. We are enhancing our service. You can contribute to us anytime for the better experience.
-                         <br>
-                        <a href="https://rzp.io/l/brooks-fashion" class="btn btn-primary btn-sm " style="margin-top:5px" > <i class="fa fa-heart" > </i> Contribute</a>
-                        </p>
-                        </div>
-                    </div>
-                </div>
-           </div>
-       </div>
-       
-        <!-- /.col-lg-12 -->
-    </div>
+
 </div>
 <!-- /#page-wrapper -->
 

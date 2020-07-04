@@ -16,7 +16,7 @@ $User = new User();
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	$data_to_db = filter_input_array(INPUT_POST);
-	// Check whether the user name already exists
+    // Check whether the user name already exists
 	$db = getDbInstance();
     $db->where('phone_number', $data_to_db['phone_number']);
 
@@ -39,7 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
         $_SESSION['public_user_id']=$last_id;
         $_SESSION['user_account_status']='new';
-        header('location: /users/account-setup.php?reg_id='.$last_id.'&user='.$data_to_db['phone_number'].'&operation=create&q='.$_GET['q']);
+        $q=(isset($_GET['q']))?$_GET['q']:'index.php';
+        header('location: /users/account-setup.php?reg_id='.$last_id.'&user='.$data_to_db['phone_number'].'&operation=create&q='.$q);
         $edit=false;
 		exit;
 	}

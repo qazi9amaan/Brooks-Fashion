@@ -88,12 +88,12 @@ require_once '/var/www/html/associates/includes/auth_validate.php';
                     
                     <input type="submit" name="submit" class="btn btn-success btn-lg text-center mx-auto mt-3" value="Upload pictures"/>
                 </form>
-                <div id="uploadStatus" class="px-2"></div>
+                <div id="uploadStatus" class="px-2 text-center"></div>
                 </div>
             </div>
                 
                   
-          
+           
     </div>
 </div>
 
@@ -127,7 +127,7 @@ $(document).ready(function(){
             processData:false,
             beforeSend: function(){
                 $(".progress-bar").width('0%');
-                $('#uploadStatus').html('<img src="images/loading.gif"/>');
+                $('#uploadStatus').html('<img src="5.gif"/>');
             },
             error:function(){
                 $('#uploadStatus').html('<div class="alert alert-info m-2" role="alert"> File upload failed, please try again </div>');
@@ -139,6 +139,7 @@ $(document).ready(function(){
                     $('#uploadStatus').html('<div class="alert text-center alert-success m-2" role="alert"><p> Files have been uploaded successfully! </p> <a href="../products.php" class="btn btn-success text-center ">Show Product</a> </div> ');
                 }else if(resp == 'err'){
                     $('#uploadStatus').html('<div class="alert alert-danger m-2" role="alert"> This file is not supported. Invalid file type or Larger File Size. </div>');
+                 	 $('#label-file').html(' <i class="fa fa-exclamation"></i>');
                     $(".progress-bar").width('0%');
 
                 }

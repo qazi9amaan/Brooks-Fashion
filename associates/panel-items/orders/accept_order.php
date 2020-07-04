@@ -5,7 +5,7 @@ require_once '/var/www/html/admin/config/config.php';
 $id = filter_input(INPUT_POST, 'order_id');
 $db = getDbInstance();
 if ($id && $_SERVER['REQUEST_METHOD'] == 'POST') {
-    
+    @$data_to_db['allow_cod'] = filter_input(INPUT_POST, 'allow_cod');
     $db->where('order_id', $id);
     $data_to_db['order_status'] = 'accepted';
     $data_to_db['order_updated_on'] =date('Y-m-d H:i:s');
