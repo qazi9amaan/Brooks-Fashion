@@ -1,4 +1,3 @@
-
 <div class="container-fluid">
             <h3 class="orders-title">Orders</h3>
             <div class="list-group">
@@ -9,14 +8,33 @@
 
                     switch($order['notification_type']){
 
-                        case "new_order":
+                        case "confirming-payment":
                             $product = $db2->where('id',$order['product_id'])->getOne("products");
                             $name= $db2->where('user',$order['user_id'])->getOne("user_profiles");
-                            $msg =  "<strong>" .$name['full_name'].'</strong> wants to buy your product <strong>'.$product['product_name']."</strong>";
+                            $msg =  "<strong>" .$name['full_name'].'</strong> brought your product <strong>'.$product['product_name']."  </strong> please wait while admin confirms the payment confirm payment. ";
                             $icon ='fa fa-shopping-cart fa-fw';
                             $class="";
-                            $link ='/associates/panel-items/orders/orders.php';
+                            $link ='/associates/panel-items/orders/confriming-payment.php';
                             break;
+                    
+                      case "delivering":
+                            $product = $db2->where('id',$order['product_id'])->getOne("products");
+                            $name= $db2->where('user',$order['user_id'])->getOne("user_profiles");
+                            $msg =  "<strong>" .$name['full_name'].'</strong> brought your product <strong>'.$product['product_name']." </strong> The payment is confirmed, please deliver it!.";
+                            $icon ='fa fa-shopping-cart fa-fw';
+                            $class="";
+                            $link ='/associates/panel-items/orders/delivering_orders.php';
+                            break;
+                    
+                      case "accepted":
+                            $product = $db2->where('id',$order['product_id'])->getOne("products");
+                            $name= $db2->where('user',$order['user_id'])->getOne("user_profiles");
+                            $msg =  "<strong>" .$name['full_name'].'</strong> brought your product <strong>'.$product['product_name']."</strong>  please wait while the customer chooses a payment type. ";
+                            $icon ='fa fa-shopping-cart fa-fw';
+                            $class="";
+                            $link ='/associates/panel-items/orders/accepted_orders.php';
+                            break;
+                    
                         case "user_approved_order":
                             $product = $db2->where('id',$order['product_id'])->getOne("products");
                             $name= $db2->where('user',$order['user_id'])->getOne("user_profiles");

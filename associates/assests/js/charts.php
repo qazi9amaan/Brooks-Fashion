@@ -1,4 +1,3 @@
-
 <?php 
  require_once '/var/www/html/admin/config/config.php';
  $current_associate = $_SESSION['associate_user_id'] ;
@@ -15,7 +14,7 @@
  $result =  $db->where('owner',$current_associate)->get('orders ',null,'order_status');
  foreach ($result as $row):
     switch($row['order_status']){
-        case "confirming":
+        case "confirming-payment":
           $new_orders +=1;
         break;
         case "accepted":
@@ -65,11 +64,12 @@ endforeach;
 window.onload = function() {
 
     var options = {
-        series: [<?php echo $accepted_orders ;?>,
-            <?php echo $rejected_orders;?>,
-            <?php echo  $new_orders; ?>,
-            <?php echo $delivered_orders; ?>,
-            <?php echo $delivering_orders; ?>
+        series: [            
+            <?php echo $delivering_orders; ?>,
+            <?php echo $new_orders;?>,
+            <?php echo $accepted_orders;?>,
+            <?php echo  $delivered_orders; ?>,
+            <?php echo  $rejected_orders?>,
 
         ],
         chart: {
@@ -96,7 +96,7 @@ window.onload = function() {
                 }
             }
         },
-        labels: ['Accepted', 'Rejected', 'Recieved','Delivered','Approved'],
+        labels: ['New Orders','Confirming','Waiting','Delivered','Rejected '],
     };
     var chart = new ApexCharts(document.querySelector("#order_details"), options);
     chart.render();

@@ -101,18 +101,23 @@ shopping cart,e business,what is ecommerce,ecomerce,Fashion,Kashmir ecom,Brooks,
                             <li class="navbar-item">
                                 <a href="/faq.php" class="nav-link">FAQ</a>
                             </li>
- <li class="navbar-item">
+                            <li class="navbar-item">
                                  <a href="/associates/" class="nav-link">Affiliates</a>
                             </li>                            
-                            <li class="navbar-item">
-                                <?php if(isset($_SESSION['public_user_id'])){?>
+                           
+                            <?php if(isset($_SESSION['public_user_id'])){?>
+                                <li class="navbar-item">
                                 <a href="/users/index.php" class="nav-link">Account</a>
-                                <?php }else{ ?>
-                                    <a href="/login.php" class="nav-link">Login</a>
-                                <?php }?>
-
-
                             </li>
+                            <li class="navbar-item">
+                                <a href="/users/logout.php" class="nav-link">Logout</a>
+                            </li>
+                            <?php }else{ ?>
+                                <li class="navbar-item">
+                                <a href="/login.php" class="nav-link">Login</a>
+                            </li>
+                            <?php }?>
+
                         </ul>
                         <form action ="/search.php" method="GET" class="form-inline my-2 my-lg-0">
                             <input id="searchbar" class="form-control mr-sm-2"  name="search_str" value="<?php echo htmlspecialchars($search_str, ENT_QUOTES, 'UTF-8'); ?>" type="search" placeholder="Search here..." aria-label="Search">

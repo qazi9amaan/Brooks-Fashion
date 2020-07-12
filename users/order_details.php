@@ -1,5 +1,4 @@
 <?php
-$key = 'rzp_live_twsRWGaSxkUdjI';
 session_start();
 require_once '/var/www/html/admin/config/config.php';
 
@@ -37,64 +36,6 @@ $order = $db->getOne("orders");
     
 }
 </style>
-
-<div class="modal fade" id="payment-confirmination" tabindex="-1" role="dialog" aria-labelledby="payment-confirmination" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Complete Payment</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p class="p-3 pb-0 mb-0">Dear user, we are happy to see you here. 
-        We have worked on our services to make this a easeless experience for you. 
-        We are ready to deliver this order to this address, please complete the payment process to 
-        move ahead.
-         </p>
-        <form class="p-3 pt-0 mt-0" action="">
-             <div class="form-group pt-0 mt-0">
-                <label for="name">Name</label>
-                <input type="text" id="name" disabled class="form-control" value="<?php echo $order['full_name'] ?>">
-            </div>
-            <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" id="email" disabled class="form-control" value="<?php echo $order['email_address'] ?>">
-            </div>
-            <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="text" id="phone" disabled class="form-control" value="<?php echo $order['phone'] ?>">
-            </div>
-            <div class="form-group">
-            <label for="address">Address</label>
-            <textarea type="text" id="address" disabled class="form-control"><?php echo $order['init_address'] ?>, <?php echo $order['landmark'].', '.$order['town'].', '.$order['state'].' - '.$order['pincode'] ?></textarea>
-            </div>
-        </form>
-        <hr>
-        <p class="px-3 pt-0 mt-0 text-justified">
-            <b>Disclaimer : </b> Dear user, please go ahead to complete the payment process choose your preffered payment option. Check your delivery address before comfirming the payment. 
-        </p>
-        <?php if($order['allow_cod'] != 'on'){?>
-        <p class="px-3 text-dark pt-0 mt-0 text-justified"> 
-            <b>Sorry! COD is not available on this product..</b>
-        </p>
-        <?php }?>
-
-      </div>
-      <div class="modal-footer">
-        
-        <button type="button" class="razorpay-payment-button" data-dismiss="modal">Close</button>
-        <?php if($order['allow_cod'] === 'on'){?>
-        <button id="cod_button" class="razorpay-payment-button border-0 bg-primary">C.O.D</button>
-        <?php }?>
-        <button id="rzp-button1" class="razorpay-payment-button border-0 bg-primary">Pay Now</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 <div class="col mt-md-2">
     <div class="container-fluid m-0 p-0">
         <div class="row p-0">
@@ -113,7 +54,7 @@ $order = $db->getOne("orders");
                     <h4 class="alert-heading pb-2">Hola your order is availble!</h4>
                     <p class="text-justify">We are happy to see you here, please complete the futher steps to get your order delivered. Please make sure that the delivery address and product is correct.</p>
                     <hr>
-                    <button  data-toggle="modal" data-target="#payment-confirmination" class="razorpay-payment-button">Complete your payment</button>
+                    <a  href="helper/complete-payment.php?order_id=<?php echo $order_id ?>&user=<?php echo $order['user']?>" class="razorpay-payment-button">Complete your payment</a>
                     
                      </div>
                 </div>
@@ -155,6 +96,12 @@ $order = $db->getOne("orders");
                                 $icon = 'fa fa-check-circle';
                                 $color='#28a745';
                                 $msg='Payment confirmed';
+                            }
+                            else if($order['order_status'] =='confirming-payment')
+                            {
+                                $icon = 'fa fa-hourglass-start';
+                                $color='#28a745';
+                                $msg='Confirming Payment';
                             }
                             else{
                                 $icon = 'fa fa-check-circle';
@@ -204,9 +151,10 @@ $order = $db->getOne("orders");
                         }else if($order['order_status']=='accepted'){
                             $color='#28a745';
                         }
-                    
-                    if($order['order_status'] =='delivering')
-                        {
+                        else if($order['order_status']=='confirming-payment'){
+                            $color='#28a745';
+                            $order['order_status_reason'] ='Please wait while we confirm the payment!';
+                        }else if($order['order_status'] =='delivering'){
                             $color='#28a745';
                             $order['order_status_reason'] =
                             '
@@ -397,52 +345,9 @@ $order = $db->getOne("orders");
 
 
 
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
 
-function update_the_payment(string){
-    $('.loader').css('display','block');
-    jQuery.ajax({
-        url:"/admin/functions/functions.php",
-        type:"POST",
-        data: {
-            changepaymenttoonline:true,
-            order_id : <?php echo $order['order_id'];?>,
-            payment_id : string,
 
-            },
-        success:function(data){  
-            $('.loader').css('display','none');
-            window.location="/users/index.php";
-
-            }  
-    });
-}
-
-
-var options = {
-    "key": "<?php echo $key; ?>", 
-    "amount": "<?php echo $order['amount'].'00'; ?>", 
-    "currency": "INR",
-    "name": "<?php echo $order['product_name'] ?>",
-    "description": "You're are subjected to pay an amount of",
-    "image": "/images/logo.jpeg",
-    "handler": function (response){
-       update_the_payment(response.razorpay_payment_id);
-    },
-    "error": {
-        "field": "email",
-        "description": "incorrect email address"
-    },
-    "prefill": {
-        "name": "<?php echo $order['full_name']; ?>",
-        "email": "<?php echo $order['email_address']; ?>",
-        "contact": "<?php echo $order['phone']; ?>"
-    },
-    "theme": {
-        "color": "#F37254"
-    }
-};
 var rzp1 = new Razorpay(options);
 document.getElementById('rzp-button1').onclick = function(e){
     rzp1.open();
@@ -450,24 +355,6 @@ document.getElementById('rzp-button1').onclick = function(e){
 }
 
 
-$('#cod_button').click(function(){
-    $('.loader').css('display','block');
-    jQuery.ajax({
-        url:"/admin/functions/functions.php",
-        type:"POST",
-        data: {
-            changepaymenttocod:true,
-            order_id : <?php echo $order['order_id'];?>,
-            
-            },
-        success:function(data){  
-            $('#checkstatus').html(data);
-            $('.loader').css('display','none');
-            window.location="/users/index.php";
-
-            }  
-    });
-})
 </script>
 
 </body>

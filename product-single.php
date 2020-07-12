@@ -89,27 +89,34 @@ session_start();
 }
 
 </style>
-<body>
+<style>
+    .cat-btn{
+    border: 0px !important;
+    background: #ffd79c33 !important;
+    color: #ff9700 !important;
+    border-radius: .85rem !important;
+    }
+    
+</style>
 
+<link rel="stylesheet" href="/css/categories-navbar.css">
+
+<body>
 <div id="loading-bar" class="container-fluid m-0 p-0">
     <div class="fixed-top progress-line"></div>
 </div>
-
 <header  style="margin-bottom:-25px;">
-        
         <div class="main-menu">
-            
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="index.php">
-                    <h1 class="display-5 py-3"><span style='color:#ff9700; letter-spacing: 0.1em;font-weight:400'>Bro</span><span style='color:#2d2d2d; letter-spacing: 0.1em;font-weight:400'>ok's</span></h1>
-                    </a>
-                   
-                    
-                    <button class="navbar-toggler ml-0 " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="d-flex pb-1 align-items-center">
+                        <button class="navbar-toggler ml-0 " type="button" onclick="openNav()" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
-                    </button>
-
+                        </button>
+                        <a class="navbar-brand ml-3 pt-1" href="index.php">
+                        <h1 class="display-5 py-3"><span style='color:#ff9700; letter-spacing: 0.1em;font-weight:400'>Bro</span><span style='color:#2d2d2d; letter-spacing: 0.1em;font-weight:400'>ok's</span></h1>
+                        </a>
+                    </div>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
@@ -125,18 +132,23 @@ session_start();
                             <li class="navbar-item">
                                 <a href="/faq.php" class="nav-link">FAQ</a>
                             </li>
- <li class="navbar-item">
+                            <li class="navbar-item">
                                  <a href="/associates/" class="nav-link">Affiliates</a>
                             </li>                            
-                            <li class="navbar-item">
-                                <?php if(isset($_SESSION['public_user_id'])){?>
+                           
+                            <?php if(isset($_SESSION['public_user_id'])){?>
+                                <li class="navbar-item">
                                 <a href="/users/index.php" class="nav-link">Account</a>
-                                <?php }else{ ?>
-                                    <a href="/login.php" class="nav-link">Login</a>
-                                <?php }?>
-
-
                             </li>
+                            <li class="navbar-item">
+                                <a href="/users/logout.php" class="nav-link">Logout</a>
+                            </li>
+                            <?php }else{ ?>
+                                <li class="navbar-item">
+                                <a href="/login.php" class="nav-link">Login</a>
+                            </li>
+                            <?php }?>
+
                         </ul>
                         <form action ="/search.php" method="GET" class="form-inline my-2 my-lg-0">
                             <input id="searchbar" class="form-control mr-sm-2"  name="search_str" value="<?php echo htmlspecialchars($search_str, ENT_QUOTES, 'UTF-8'); ?>" type="search" placeholder="Search here..." aria-label="Search">
@@ -150,15 +162,114 @@ session_start();
         </div>
     </header>
 
-	<script>
+    <div id="mySidenav" class="sidenav_mob">
+        <nav id="sidebar">
+            <div class="p-4">
+                <h5 class=" h2  d-flex align-items-center"><i style="color:#333; font-size:25px" href="javascript:void(0)" onclick="closeNav()" id="dismiss" class="fa fa-angle-left"></i>&nbsp;
+                B<span style="color:#2d2d2d"> F<small style="font-size:20px" class="ml-0 pl-0">ASHION</small></span> </h1>
+            </div>
 
-$(document).ready(function() {
+            <ul id="mobile-nav" class="list-unstyled ">
+                <span class="text-muted header pl-3">Categories</span>
+                <div id="accordion">       
+                <div class="list-group mt-2 px-2">
+                    <button 
+                        data-toggle="collapse" data-target="#collapseOne-a" aria-expanded="true" aria-controls="collapseOne-a"
+                        type="button" 
+                        class="list-group-item border-0 rounded  cat-head d-flex justify-content-between align-items-center ">
+                        Clothing
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div id="collapseOne-a" class=" collapse show" aria-labelledby="headingOne" data-parent="#accordion" >
+                        <a href="getallproducts.php?cat=Mens-Fashion" class="list-group-item border-0 list-group-item-action">Mens Fashion</a>
+                        <a href="getallproducts.php?cat=Womens-Fashion" class="list-group-item border-0 list-group-item-action">Women's Fashion</a>
+                    </div>
 
-$("#loading-bar").delay(1000).fadeOut("slow");
+                    <button 
+                        data-toggle="collapse" data-target="#collapse2-a" aria-expanded="true" aria-controls="collapse2-a"
+                        type="button" 
+                        class="list-group-item border-0 mt-2 collapsed rounded  cat-head d-flex justify-content-between align-items-center ">
+                        Bridal Wear
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div id="collapse2-a" class=" collapse " aria-labelledby="headingOne" data-parent="#accordion" >
+                        <a href="getallproducts.php?cat=Lehanga" class="list-group-item border-0 list-group-item-action">Lehanga</a>
+                        <a href="getallproducts.php?cat=Bridal-Gown" class="list-group-item border-0 list-group-item-action">Bridal Gown</a>
+                        <a href="getallproducts.php?cat=Brocket-Suit" class="list-group-item border-0 list-group-item-action">Brocket Suit</a>
 
-})
-	</script>
+                    </div>
 
+                    <button 
+                        data-toggle="collapse" data-target="#collapse3-a" aria-expanded="true" aria-controls="collapse3-a"
+                        type="button" 
+                        class="list-group-item border-0 mt-2 collapsed rounded  cat-head d-flex justify-content-between align-items-center ">
+                        Accessories
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div id="collapse3-a" class=" collapse " aria-labelledby="headingOne" data-parent="#accordion" >
+                        <a href="getallproducts.php?cat=Watches" class="list-group-item border-0 list-group-item-action">Watches</a>
+                        <a href="getallproducts.php?cat=Shoes" class="list-group-item border-0 list-group-item-action">Shoes</a>
+                        <a href="getallproducts.php?cat=Handbags" class="list-group-item border-0 list-group-item-action">Bags , Handbags</a>
+                    </div>
+
+                    <button 
+                        data-toggle="collapse" data-target="#collapse4-a" aria-expanded="true" aria-controls="collapse4-a"
+                        type="button" 
+                        class="list-group-item border-0 mt-2 collapsed rounded  cat-head d-flex justify-content-between align-items-center ">
+                        Electronics
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div id="collapse4-a" class=" collapse " aria-labelledby="headingOne" data-parent="#accordion" >
+                        <a href="getallproducts.php?cat=Speakers" class="list-group-item border-0 list-group-item-action">Speakers</a>
+                        <a href="getallproducts.php?cat=Ear-buds" class="list-group-item border-0 list-group-item-action">Ear buds</a>
+                        <a href="getallproducts.php?cat=Head-phone" class="list-group-item border-0 list-group-item-action">Head phone</a>
+                        <a href="getallproducts.php?cat=Smart-watches" class="list-group-item border-0 list-group-item-action">Smart watches</a>
+                    </div>
+
+                    <button 
+                        data-toggle="collapse" data-target="#collapse5-a" aria-expanded="true" aria-controls="collapse5-a"
+                        type="button" 
+                        class="list-group-item border-0 mt-2 rounded collapsed  cat-head d-flex justify-content-between align-items-center ">
+                        Home And Decor
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div id="collapse5-a" class=" collapse " aria-labelledby="headingOne" data-parent="#accordion" >
+                        <a href="getallproducts.php?cat=Grocerries" class="list-group-item border-0 list-group-item-action">Grocerries</a>
+                        <a href="getallproducts.php?cat=Islamic-Scriptures" class="list-group-item border-0 list-group-item-action">Islamic Scriptures</a>
+                        <a href="getallproducts.php?cat=Customised-Gifts" class="list-group-item border-0 list-group-item-action">Customised Gifts </a>
+
+                    </div>
+
+                    <button 
+                        data-toggle="collapse" data-target="#collapse6-a" aria-expanded="true" aria-controls="collapse6-a"
+                        type="button" 
+                        class="list-group-item border-0 mt-2 rounded collapsed cat-head d-flex justify-content-between align-items-center ">
+                        Cosmotics
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div id="collapse6-a" class=" collapse " aria-labelledby="headingOne" data-parent="#accordion" >
+                        <a href="getallproducts.php?cat=Bridal-Makeup" class="list-group-item border-0 list-group-item-action">Bridal Makeup</a>
+                    </div>
+                </div> 
+                </div> 
+            </ul>
+            <p class="text-muted header mt-3 mb-0 mb-2 pl-3">PAGES</p>
+            <div class="list-group list-group-flush px-3">
+                <a href="/search.php" class="list-group-item pl-1 border-0 list-group-item-action"><i class="fa fa-search">&nbsp; &nbsp;</i>Search</a>
+                <a href="/index.php" class="list-group-item border-0 pl-1 list-group-item-action"><i class="fa fa-home">&nbsp; &nbsp;</i>Home</a>
+                <a href="/shop.php" class="list-group-item  border-0 pl-1 list-group-item-action"><i class="fa fa-shopping-bag">&nbsp; &nbsp;</i>Shop</a>
+                <a href="/about.php" class="list-group-item  border-0 pl-1 list-group-item-action"><i class="fa fa-info-circle">&nbsp; &nbsp;</i>About</a>
+                <a href="/faq.php" class="list-group-item  border-0 pl-1 list-group-item-action"><i class="fa fa-question-circle">&nbsp; &nbsp;</i>FAQ</a>
+                <a href="/associates/" class="list-group-item  border-0 pl-1 list-group-item-action"><i class="fa fa-handshake-o">&nbsp; &nbsp;</i>Affiliates</a>
+                <?php if(isset($_SESSION['public_user_id'])){?>
+                <a href="/users/index.php"  class="list-group-item  border-0 pl-1   list-group-item-action"><i class="fa fa-user-circle-o">&nbsp; &nbsp;</i>Account</a>
+                <a href="/users/logout.php"  class="list-group-item   border-0  pl-1 list-group-item-action"><i class="fa fa-arrow-circle-left">&nbsp; &nbsp;</i>Logout</a>
+                    <?php }else{ ?>
+                        <a href="/users/logout.php"  class="list-group-item    border-0 pl-1 list-group-item-action"><i class="fa fa-user-circle-o">&nbsp; &nbsp;</i>Login</a>
+                    <?php }?>
+            </div>
+        </nav>
+    </div>
 
 
 
@@ -419,13 +530,35 @@ $total_pages = $db->totalPages;
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
-	<script>
+    <script>
 
 $(document).ready(function() {
 
 $("#loading-bar").delay(1000).fadeOut("slow");
 
 })
+function openNav() {
+  document.getElementById("mySidenav").style.width = "350px";
+
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  
+} 
+function toggleNav() {
+    var btn = $('#show-cat-btn');
+    if(btn.attr('data-state')=='close'){
+      document.getElementById("mySidenav").style.width = "350px";
+      btn.attr('data-state','open');
+
+
+  }else{
+    btn.attr('data-state','close');
+    document.getElementById("mySidenav").style.width = "0";
+  }  
+} 
 	</script>
 
 </body>

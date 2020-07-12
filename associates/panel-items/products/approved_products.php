@@ -51,6 +51,9 @@ $db->where('product_owner', $current_associate );
 // Get result of the query
 $rows = $db->arraybuilder()->paginate('products', $page, $select);
 $total_pages = $db->totalPages;
+
+$name = $db->where('id',$current_associate)->getValue('associate_accounts','bussiness_name');
+
 ?>
 
 <?php  include PARENT . '/associates/includes/header-nav.php'; ?>
@@ -101,17 +104,18 @@ $total_pages = $db->totalPages;
     <!-- //Filters -->
 
     <!-- Table -->
+
     <table class="table table-striped table-bordered table-condensed">
         <thead>
             <tr>
-                <th width="5%">ID</th>
-                <th width="20%">Product Name</th>
-                <th width="30%">Product Description</th>
-                <th width="8%"> Category</th>
-                <th width="5%"> Quality</th>
-                <th width="8%"> Cost Price</th>
-                <th width="8%">Selling Price</th>
-                <th width="10%">Actions</th>
+                <th>ID</th>
+                <th>Product Name</th>
+                <th>Product Description</th>
+                <th> Category</th>
+                <th> Quality</th>
+                <th> Cost Price</th>
+                <th>Selling Price</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -126,6 +130,9 @@ $total_pages = $db->totalPages;
                 <td><?php echo htmlspecialchars($row['product_price']); ?></td>
 
                 <td>
+                    <a class ="btn btn-success" 
+                    href="whatsapp://send?text=%2A<?php echo $row['product_name']?>%2A%20%2A,<?php echo $name;?>%2A%0A%2ABrooks%20Fashion%2A Save ₹ <?php echo $row['product_price']-$row['product_discount_price'] ?>/= %0A Get yours for ₹<?php echo $row['product_discount_price'] ?>/= %0A Buy now https://brooksfashion.ml/product-single.php?id=<?php echo $row['id'] ?>" 
+                    data-action="share/whatsapp/share"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                     <a href="view_product.php?product_id=<?php echo $row['id']; ?>&operation=view" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i></a>
                     <a href="view_product.php?product_id=<?php echo $row['id']; ?>&operation=edit" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></a>
                     <a href="#"  class="btn btn-danger delete_btn" data-toggle="modal" data-target="#confirm-delete-<?php echo $row['id']; ?>"><i class="glyphicon glyphicon-trash"></i></a>

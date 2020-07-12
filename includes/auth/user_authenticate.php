@@ -71,14 +71,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         else
         {
 			$_SESSION['login_failure'] = 'Invalid user name or password';
-			header('Location: /login.php');
+			header('Location: /login.php?q='.$_POST['q']);
 		}
 		exit;
 	}
     else
     {
 		$_SESSION['login_failure'] = 'Invalid user name or password';
-		header('Location: /login.php');
+		header('Location: /login.php?q='.$_POST['q']);
 		exit;
 	}
 }

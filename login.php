@@ -48,6 +48,8 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === TRUE)
                             <input name="password"  type="password" placeholder="Password" required>
                             <span class="required-star">*</span>
                         </div>
+                        <input type="text" hidden  value="<?php echo $_GET['q']? $_GET['q'] : 'index.php' ;?>" name="q" >
+
                         <?php if (isset($_SESSION['login_failure'])): ?>
 				<div class="col-md-10">
                 <div class="alert alert-danger alert-dismissable ">

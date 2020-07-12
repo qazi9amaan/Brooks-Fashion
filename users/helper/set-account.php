@@ -5,6 +5,7 @@ session_start();
 require_once '/var/www/html/admin/config/config.php';
 $operation = filter_input(INPUT_GET, 'operation', FILTER_SANITIZE_STRING); 
 $reg_id =filter_input(INPUT_GET, 'reg_id', FILTER_SANITIZE_STRING); 
+$redirect = filter_input(INPUT_GET, 'q', FILTER_SANITIZE_STRING)? filter_input(INPUT_GET, 'q', FILTER_SANITIZE_STRING) : "index.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
         $data_to_db = filter_input_array(INPUT_POST);
@@ -22,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             {   
                 $_SESSION['user_logged_in'] = TRUE;
 			    $_SESSION['public_user_id'] = $reg_id;
-                header('location:/index.php');
+                header('location:/'.$redirect);
                  exit;
         }
      }else{

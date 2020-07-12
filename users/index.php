@@ -1,37 +1,27 @@
-
 <?php
 session_start();
 require_once '/var/www/html/admin/config/config.php';
 
-// Costumers class
 require_once PARENT . '/associates/lib/Orders/Orders.php';
 $orders = new Orders();
 
 function dateDifference($start_date, $end_date)
 {
-    // calulating the difference in timestamps 
     $diff = strtotime($start_date) - strtotime($end_date);
-      
-    // 1 day = 24 hours 
-    // 24 * 60 * 60 = 86400 seconds
     return ceil(abs($diff / 86400));
 }
 
-// Get Input data from query string
 $order_by	= filter_input(INPUT_GET, 'order_by');
 $order_dir	= filter_input(INPUT_GET, 'order_dir');
 $search_str	= filter_input(INPUT_GET, 'search_str');
 $current_user = $_SESSION['public_user_id'] ;
-// Per page limit for pagination
-$pagelimit = 7;
+$pagelimit = 10;
 
-// Get current pagecostumers
 $page = filter_input(INPUT_GET, 'page');
 if (!$page) {
 	$page = 1;
 }
 
-// If filter types are not selected we show latest added data first
 if (!$order_by) {
 	$order_by = 'o.order_id';
 }
@@ -39,42 +29,53 @@ if (!$order_dir) {
 	$order_dir = 'Desc';
 }
 
-// Get DB instance. i.e instance of MYSQLiDB Library
 $db = getDbInstance();
 
-// Start building query according to input parameters
-// If search string
 if ($search_str) {
 	$db->where('product_name', '%' . $search_str . '%', 'like');
 	$db->orwhere('product_category', '%' . $search_str . '%', 'like');
 }
-// If order direction option selected
 if ($order_dir) {
 	$db->orderBy($order_by, $order_dir);
 }
 
-// Set pagination limit
 $db->pageLimit = $pagelimit;
 $db->where('o.user_id', $current_user);
 $db->join("products p", "o.product_id=p.id", "INNER");
 $rows = $db->arraybuilder()->paginate('orders o', $page);
 $total_pages = $db->totalPages;
 
-
-
-
-
 ?>
 <?php include 'includes/header.php' ?>
 <style>
 .order img{
-    width:185px;
+    width:100px;
     object-fit: cover;
-    height:135px;
-    margin:-1px;
+    height:100px;
+    border-radius:50%;
+}
+.order .card{
+    box-shadow:
+}
+.stretched-link{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+    content: "";
+    background-color: rgba(0,0,0,0);
+}
+
+.badge-theme{   border: 0px !important;
+    background: #ffd79c33 !important;
+    color: #ff9700 !important;
+    border-radius: .85rem !important;
 }
 </style>
-<div style="margin-bottom:95px;" class="col mt-md-2 ">
+<div style="margin-bottom:95px;" class="col mt-md-3 ">
     <div class="container-fluid m-0 p-0">
         <div class="row p-0">
             <div class="col-md-12 p-0 bg-light">
@@ -84,12 +85,11 @@ $total_pages = $db->totalPages;
                 </div>
             </div>
 
-            <div class="col-12 p-0 mt-3 mb-5">
-                <div class="d-flex mx-4 mt-2 mx-md-5  border-bottom pb-2 align-items-center justify-content-between">
+            <div style ="height:500px" class="col-12 p-0 mt-3 mb-5">
+                <div class=" mx-4 mt-2 mx-md-5  border-bottom pb-2 ">
                 <p class="  ml-1 h2 ">
                     My Orders
                 </p>
-                <i class="fa fa-search" aria-hidden="true"></i>
                 </div>
                 
                 <div class="p-3 px-md-5">
@@ -112,38 +112,31 @@ $total_pages = $db->totalPages;
                             }
 
                         ?>
-                            
-                        <a href="order_details.php?order_id=<?php echo $row['order_id'];?>" class="<?php echo $state; ?> list-group-item p-0 list-group-item-action mt-1 flex-column align-items-start">
-                            <div class="d-flex">
-                                <img src="<?php echo $first_imgURL;?>" class="rounded-left" alt="">
-                                <div class="w-100 p-3">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1"><?php echo $row['product_name'];?></h5>
-                                    <small><?php echo dateDifference($row['ordered_at'],date('Y-m-d H:i:s'));?> days ago</small>
+                        <div class="card border-0 py-2">
+                            <div class="media position-relative align-items-center">
+                                <img src="<?php echo $first_imgURL;?>" class="mr-3" alt="...">
+                                <div class="media-body mt-2">
+                                    <h5 class="mt-0 lead"><?php echo $row['product_name'];?> </h5>
+                                    <span class="badge badge-theme p-2 font-weight-light text-uppercase"><?php
+                                        if($row['order_status'] =='accepted')
+                                        {
+                                            echo 'Incomplete Payment';
+                                        }
+                                        else if($row['order_status'] =='delivering')
+                                        {
+                                            echo 'Shipped';
+                                        }
+                                        else{
+                                            echo $row['order_status'];
+                                        }
+                                ?></span><br>
+                                 <small class="py-0 my-0 text-muted pl-2"><?php echo dateDifference($row['ordered_at'],date('Y-m-d'));?> days ago</small>
+
+                                    <a href="order_details.php?order_id=<?php echo $row['order_id'];?>" class="stretched-link"></a>
                                 </div>
-                                <p class="mb-0 text-capitalize">Quality : <?php echo $row['product_quality'];?> </p>
-                                <p class="mb-0">Price : <?php echo $row['amount'];?>/=</p>
-
-                                <small class="text-capitalize">Status : <?php
-                                    if($row['order_status'] =='accepted')
-                                    {
-                                        echo 'Accepted, please complete payment...';
-                                    }
-                                    else if($row['order_status'] =='delivering')
-                                    {
-                                        echo 'Your order is being shipped please be patient!';
-                                    }
-                                    else{
-                                        echo $row['order_status'];
-                                    }
-                                
-                                ?></small>
-                                </div>
-                            </div>                   
-                        </a>
-                        
-
-
+                                <span style="color:#ff9700"><i class="fa fa-arrow-circle-right"> </i></span>
+                            </div>
+                        </div>
                     <?php endforeach; ?>
                     </div>
 
@@ -157,4 +150,3 @@ $total_pages = $db->totalPages;
         </div>
     </div>
 </div>
-<?php include 'includes/footer.php' ?>

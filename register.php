@@ -19,12 +19,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     // Check whether the user name already exists
 	$db = getDbInstance();
     $db->where('phone_number', $data_to_db['phone_number']);
-
-	$db->get('auth_user_account');
-
+    $db->get('auth_user_account');
+    $q=(isset($_GET['q']))?$_GET['q']:'index.php';
 	if ($db->count >= 1)
 	{
-		header('location: register.php?failure=User already exists');
+		header('location: register.php?failure=User already exists&q='.$q);
 		exit;
 	}
 

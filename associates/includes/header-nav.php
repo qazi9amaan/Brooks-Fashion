@@ -109,11 +109,13 @@ $numNotifications=$numActivities+$numOrders;
                                 <li<?php echo (CURRENT_PAGE == 'orders.php' || CURRENT_PAGE == 'acc_orders.php' ||CURRENT_PAGE == 'accepted_orders.php'||CURRENT_PAGE == 'rejected_orders.php'||CURRENT_PAGE == 'delivered_orders.php' ) ? ' class="active"' : ''; ?>>
                                         <a href="#"><i class="fa fa-shopping-bag fa-fw"></i> Orders<i class="fa arrow"></i></a>
                                         <ul class="nav nav-second-level">
-                                            <li><a href="/associates/panel-items/orders/orders.php"><i class="fa fa-shopping-bag fa-fw"></i> Orders</a></li>
-                                            <li><a href="/associates/panel-items/orders/accepted_orders.php"><i class="fa  fa-check fa-fw"></i>  Accepted Orders</a></li>
+<!--                                             <li><a href="/associates/panel-items/orders/orders.php"><i class="fa fa-shopping-bag fa-fw"></i> Orders</a></li>
+                                            <li><a href="/associates/panel-items/orders/accepted_orders.php"><i class="fa  fa-check fa-fw"></i>  Accepted Orders</a></li> -->
+                                            <li><a href="/associates/panel-items/orders/delivering_orders.php"><i class="fa  fa-thumbs-up fa-fw"></i> To be delivered Orders</a></li>
+                                         <li><a href="/associates/panel-items/orders/confriming-payment.php"><i class="fa  fa-rupee fa-fw"></i> Confirm Payment</a></li>
+                                           <li><a href="/associates/panel-items/orders/accepted_orders.php"><i class="fa  fa-warning fa-fw"></i>  Waiting Orders</a></li>
                                             <li><a href="/associates/panel-items/orders/rejected_orders.php"><i class="fa  fa-remove fa-fw"></i> Rejected Orders</a></li>
                                             <li><a href="/associates/panel-items/orders/delivered_orders.php"><i class="fa  fa-truck fa-fw"></i> Delivered Orders</a></li>
-                                            <li><a href="/associates/panel-items/orders/delivering_orders.php"><i class="fa  fa-thumbs-up fa-fw"></i> To be delivered Orders</a></li>
 
 
                                          

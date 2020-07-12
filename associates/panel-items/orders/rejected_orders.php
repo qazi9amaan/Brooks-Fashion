@@ -49,6 +49,8 @@ $db->where('a.id', $current_associate);
 $db->where('o.order_status', 'rejected');
 $db->join("products p", "o.product_id=p.id", "INNER");
 $db->join("associate_accounts a", "a.id = p.product_owner", "INNER");
+$db->join("user_profiles u", "u.user=o.user_id", "INNER");
+
 // Get result of the query
 $rows = $db->arraybuilder()->paginate('orders o', $page);
 $total_pages = $db->totalPages;

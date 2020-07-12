@@ -18,7 +18,7 @@ $total_pages = $db->totalPages;
 ?>
 
 
-<div id="notification_drawer" class="overlay px-3">
+<div id="notification_drawer" style="overflow-y:scroll" class="overlay px-3">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="Activity_title"><span>Activity</span></div>
         

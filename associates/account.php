@@ -16,6 +16,7 @@ $numNewOrders = $db->where('orders.order_status', 'confirming')->where('associat
 $numRejectedOrders = $db->where('orders.order_status', 'rejected')->where('associate_accounts.id', $current_associate)->join("products", "orders.product_id=products.id", "INNER")->join("associate_accounts", "associate_accounts.id = products.product_owner", "INNER")->getValue ("orders", "count(*)");
 $numAcceptedOrders =$db->where('orders.order_status', 'accepted')->where('associate_accounts.id', $current_associate)->join("products", "orders.product_id=products.id", "INNER")->join("associate_accounts", "associate_accounts.id = products.product_owner", "INNER")->getValue ("orders", "count(*)");
 $numDeliveringOrders =$db->where('orders.order_status', 'delivering')->where('associate_accounts.id', $current_associate)->join("products", "orders.product_id=products.id", "INNER")->join("associate_accounts", "associate_accounts.id = products.product_owner", "INNER")->getValue ("orders", "count(*)");
+$PaymentConfirmingOrders =$db->where('orders.order_status', 'confirming-payment')->where('associate_accounts.id', $current_associate)->join("products", "orders.product_id=products.id", "INNER")->join("associate_accounts", "associate_accounts.id = products.product_owner", "INNER")->getValue ("orders", "count(*)");
 
 include_once('includes/header-nav.php');
 ?>
@@ -43,7 +44,29 @@ include_once('includes/header-nav.php');
 
 			 <div class="row ">
   
-       <div class="col-md-12">
+      
+  
+  <div class="col-md-12">
+  <div class="panel panel-chart-white">
+      <div class="panel-heading">
+               <div class="row">
+                   <div class="col-xs-12 text-left">
+                   <span>Important Notice!</span>
+                   <p class="text-justify" >
+                       <strong> Dear associate, </strong> we have made some changes in the ordering pattern of the customers, for there convience. <br> 
+                   Now you need not the accept the orders, 
+                   the orders will directly appear as the 'ready-to-deliver/approved' orders in New Order Section, where you can only reject the order.
+                   <br>
+                   If the order is of type 'Online-Payment', it will appear under Confirm Payment Section till the admin confirms the payment and will later be seen in the New Order Section.
+                   <br>
+                   If the customer places an order and doesnot select the mode of payment, the order will come under Waiting Section.
+                   </p>
+                   </div>
+               </div>
+           </div>
+      </div>
+  </div>
+   <div class="col-md-12">
        <div class="panel panel-chart-red">
            <div class="panel-heading">
                     <div class="row">
@@ -59,24 +82,6 @@ include_once('includes/header-nav.php');
                 </div>
            </div>
        </div>
-  
-  <div class="col-md-12">
-  <div class="panel panel-chart-white">
-      <div class="panel-heading">
-               <div class="row">
-                   <div class="col-xs-12 text-left">
-                   <span>Contribute to brooks</span>
-                   <p class="text-justify" >
-                       <strong> Dear associate, </strong> we are happy to serve you here. We are enhancing our service. You can contribute to us anytime for the better experience.
-                    <br>
-                   <a href="https://rzp.io/l/brooks-fashion" class="btn btn-primary btn-sm " style="margin-top:5px" > <i class="fa fa-heart" > </i> Contribute</a>
-                   </p>
-                   </div>
-               </div>
-           </div>
-      </div>
-  </div>
-  
         <!-- /.col-lg-12 -->
     </div>
 
@@ -163,69 +168,76 @@ include_once('includes/header-nav.php');
                 </a>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6">
-        <div class="panel panel-red">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa  fa-times fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge"><?php echo $numRejectedOrders;  ?></div>
-                            <div>Rejected Orders</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="panel-items/orders/rejected_orders.php">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
+       
         </div>
-        <div class="col-lg-3 col-md-6">
+       
+    <!-- /.row -->
+    <div class="row">
+        
+
+          <div class="col-lg-3">
         <div class="panel panel-yellow">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-shopping-cart fa-5x"></i>
+                            <i class="fa fa-thumbs-up fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge"><?php echo $numNewOrders;  ?></div>
+                            <div class="huge"><?php echo $numDeliveringOrders;  ?></div>
                             <div>New Orders</div>
                         </div>
                     </div>
                 </div>
-                <a href="panel-items/orders/orders.php">
+                <a href="panel-items/orders/delivering_orders.php">
                     <div class="panel-footer">
-                        <span class="pull-left">View New Orders</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <span class="pull-left">To be delivered / Approved Orders</span>
+                        <span class="pull-right"><i class="fa  fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
                 </a>
             </div>
         </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-3">
         <div class="panel panel-green">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-hourglass-half fa-5x"></i>
+                            <i class="fa fa-rupee fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge"><?php echo $PaymentConfirmingOrders;  ?></div>
+                            <div>Confirm Payment</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="panel-items/orders/confriming-payment.php">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Orders</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- /.panel -->
+        </div>
+    
+     <div class="col-lg-3">
+       <div class="panel panel-yellow">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-warning fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge"><?php echo $numAcceptedOrders;  ?></div>
-                            <div>Accepted Orders</div>
+                            <div>Waiting Orders</div>
                         </div>
                     </div>
                 </div>
                 <a href="panel-items/orders/accepted_orders.php">
                     <div class="panel-footer">
-                        <span class="pull-left">View Ongoing Orders</span>
+                        <span class="pull-left">Orders without payment</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -235,7 +247,7 @@ include_once('includes/header-nav.php');
             <!-- /.panel -->
         </div>
         <!-- /.col-lg-8 -->
-        <div class="col-lg-4">
+        <div class="col-lg-3">
         <div class="panel panel-primary">
                 <div class="panel-heading">
                     <div class="row">
@@ -257,30 +269,29 @@ include_once('includes/header-nav.php');
                 </a>
             </div>
         </div>
-        <!-- /.col-lg-4 -->    
-        
-         <div class="col-lg-4">
-        <div class="panel panel-yellow">
+        <!-- /.col-lg-3 -->    
+         <div class="col-lg-3 col-md-6">
+        <div class="panel panel-red">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-thumbs-up fa-5x"></i>
+                            <i class="fa  fa-times fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge"><?php echo $numDeliveringOrders;  ?></div>
-                            <div>To be delivered / Approved Orders</div>
+                            <div class="huge"><?php echo $numRejectedOrders;  ?></div>
+                            <div>Rejected Orders</div>
                         </div>
                     </div>
                 </div>
-                <a href="panel-items/orders/delivering_orders.php">
+                <a href="panel-items/orders/rejected_orders.php">
                     <div class="panel-footer">
-                        <span class="pull-left">View All delivery orders</span>
-                        <span class="pull-right"><i class="fa  fa-arrow-circle-right"></i></span>
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
                 </a>
             </div>
-        </div>
+        
     </div>
     <!-- /.row -->
 

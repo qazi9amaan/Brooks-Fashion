@@ -1,6 +1,6 @@
 <fieldset>
     <div class="form-group">
-        <label for="product_name">Product Name *</label>
+        <label for="product_name">Product Name a *</label>
           <input type="text" name="product_name" value="<?php echo ($edit ? $product['product_name'] : ''); ?>" placeholder="Product Name " class="form-control" required="required" id = "product_name">
     </div> 
 
