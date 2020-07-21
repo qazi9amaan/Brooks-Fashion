@@ -22,9 +22,7 @@ if ($id && $_SERVER['REQUEST_METHOD'] == 'POST') {
     if($stat){
         $db = getDbInstance();
         $db->where('order_id',$id)->delete('order_notifcations');
-        $notification['notification_type']="assocaite_order_completed";
-        $notification['id']=$id;
-        $last_id = $db->insert('admin_notifications', $notification);
+        
 
         $_SESSION['success'] = "Product accepted successfully!";
         header('Location:orders.php');

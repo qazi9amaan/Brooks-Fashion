@@ -13,7 +13,7 @@ $order_dir	= filter_input(INPUT_GET, 'order_dir');
 $search_str	= filter_input(INPUT_GET, 'search_str');
 $current_associate = $_SESSION['associate_user_id'] ;
 // Per page limit for pagination
-$pagelimit = 15;
+$pagelimit = 30;
 
 // Get current pagecostumers
 $page = filter_input(INPUT_GET, 'page');
@@ -50,7 +50,7 @@ $db->where('product_owner', $current_associate );
 
 // Get result of the query
 $rows = $db->arraybuilder()->paginate('associate_products', $page, $select);
-$total_pages = $db->totalPages;
+$total_pages_pag = $db->totalPages;
 ?>
 
 <?php  include PARENT . '/associates/includes/header-nav.php'; ?>
@@ -195,7 +195,7 @@ $total_pages = $db->totalPages;
 
     <!-- Pagination -->
     <div class="text-center">
-    	<?php echo paginationLinks($page, $total_pages, 'products.php'); ?>
+    	<?php echo paginationLinks($page, $total_pages_pag, 'products.php'); ?>
     </div>
     <!-- //Pagination -->
 </div>

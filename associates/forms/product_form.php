@@ -1,6 +1,6 @@
 <fieldset>
     <div class="form-group">
-        <label for="product_name">Product Name a *</label>
+        <label for="product_name">Product Name *</label>
           <input type="text" name="product_name" value="<?php echo ($edit ? $product['product_name'] : ''); ?>" placeholder="Product Name " class="form-control" required="required" id = "product_name">
     </div> 
 
@@ -57,7 +57,7 @@
     }else{
     if($edit)
     {
-    include BASE_PATH.'/includes/image_upload.php';    
+    include '/var/www/html/admin/includes/image_upload.php';    
     }
 }?>
 

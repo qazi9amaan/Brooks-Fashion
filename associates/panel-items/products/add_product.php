@@ -3,6 +3,13 @@ session_start();
 require_once '/var/www/html/admin/config/config.php';
 require_once '/var/www/html/associates/includes/auth_validate.php';
 
+$db = getDbInstance();
+$db->where('id', $_SESSION['associate_user_id']);
+$account_status = $db->getValue('associate_accounts','account_status');
+if(  $account_status == 'banned'){
+    header('Location:blocked-notifi.php');
+}
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') 
 {

@@ -13,7 +13,7 @@ $order_dir	= filter_input(INPUT_GET, 'order_dir');
 $search_str	= filter_input(INPUT_GET, 'search_str');
 $current_associate = $_SESSION['associate_user_id'] ;
 // Per page limit for pagination
-$pagelimit = 15;
+$pagelimit = 30;
 
 // Get current pagecostumers
 $page = filter_input(INPUT_GET, 'page');
@@ -31,7 +31,7 @@ if (!$order_dir) {
 
 // Get DB instance. i.e instance of MYSQLiDB Library
 $db = getDbInstance();
-$select = array('id', 'product_name', 'product_desc','product_owner' ,'product_category', 'product_cost_price', 'file_name','product_price', 'product_quality','created_at', 'updated_at');
+$select = array('id', 'product_name', 'product_desc','product_owner' ,'product_category','product_discount_price', 'product_cost_price', 'file_name','product_price', 'product_quality','created_at', 'updated_at');
 
 // Start building query according to input parameters
 // If search string
@@ -50,7 +50,7 @@ $db->where('product_owner', $current_associate );
 
 // Get result of the query
 $rows = $db->arraybuilder()->paginate('products', $page, $select);
-$total_pages = $db->totalPages;
+$total_pages_app = $db->totalPages;
 
 $name = $db->where('id',$current_associate)->getValue('associate_accounts','bussiness_name');
 
@@ -127,11 +127,12 @@ $name = $db->where('id',$current_associate)->getValue('associate_accounts','buss
             <td><?php echo htmlspecialchars($row['product_category']); ?></td>
                 <td><?php echo htmlspecialchars($row['product_quality']); ?></td>
                 <td><?php echo htmlspecialchars($row['product_cost_price']); ?></td>
-                <td><?php echo htmlspecialchars($row['product_price']); ?></td>
+                <td><?php echo htmlspecialchars($row['product_discount_price']); ?></td>
 
                 <td>
                     <a class ="btn btn-success" 
-                    href="whatsapp://send?text=%2A<?php echo $row['product_name']?>%2A%20%2A,<?php echo $name;?>%2A%0A%2ABrooks%20Fashion%2A Save ₹ <?php echo $row['product_price']-$row['product_discount_price'] ?>/= %0A Get yours for ₹<?php echo $row['product_discount_price'] ?>/= %0A Buy now https://brooksfashion.ml/product-single.php?id=<?php echo $row['id'] ?>" 
+                    href="whatsapp://send?text=%2A<?php echo $row['product_name']?>%2A%20%2A,
+                          <?php echo $name;?>%2A%0A%2ABrooks%20Fashion%2A Save ₹ <?php echo $row['product_price']-$row['product_discount_price'] ?>/= %0A Get yours for ₹<?php echo $row['product_discount_price'] ?>/= %0A Buy now https://brooksfashion.ml/product-single.php?id=<?php echo $row['id'] ?>" 
                     data-action="share/whatsapp/share"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                     <a href="view_product.php?product_id=<?php echo $row['id']; ?>&operation=view" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i></a>
                     <a href="view_product.php?product_id=<?php echo $row['id']; ?>&operation=edit" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></a>
@@ -171,7 +172,7 @@ $name = $db->where('id',$current_associate)->getValue('associate_accounts','buss
 
     <!-- Pagination -->
     <div class="text-center">
-    	<?php echo paginationLinks($page, $total_pages, 'approved_products.php'); ?>
+    	<?php echo paginationLinks($page, $total_pages_app, 'approved_products.php'); ?>
     </div>
     <!-- //Pagination -->
 </div>
